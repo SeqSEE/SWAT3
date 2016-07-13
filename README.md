@@ -1,2 +1,2 @@
-# SWAT3
+# SWAT³
 SWAT³
