@@ -1,4 +1,6 @@
-itemGroup.swatweapons=SWAT Weapons
+itemGroup.swatcombat=SWAT Combat
+itemGroup.swathealing=SWAT Healing
+itemGroup.swatparts=SWAT Parts
 
 
 item.ak_47_butt.name=AK-47 BUTT
@@ -6,3 +8,4 @@ item.ak_47_chasis.name=AK-47 Chasis
 item.ak_47_handle.name=AK-47 Handle
 item.ak_47_barrel_housing.name=AK-47 Barrel Housing
 item.ak_47_barrel.name=AK-47 Barrel
+item.ak_47.name=AK-47

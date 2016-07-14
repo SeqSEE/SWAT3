@@ -10,7 +10,19 @@ public class SWATCreativeTabs extends CreativeTabs {
 		super(index, label);
 	}
 
-	public static final SWATCreativeTabs SWATWeapons = new SWATCreativeTabs(CreativeTabs.getNextID(), "ngcombat") {
+	public static final SWATCreativeTabs SWATCombat = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatcombat") {
+		@SideOnly(Side.CLIENT)
+		public Item getTabIconItem() {
+			return SWATItems.AK_47_HANDLE;
+		}
+	};
+	public static final SWATCreativeTabs SWATHealing = new SWATCreativeTabs(CreativeTabs.getNextID(), "swathealing") {
+		@SideOnly(Side.CLIENT)
+		public Item getTabIconItem() {
+			return SWATItems.AK_47_HANDLE;
+		}
+	};
+	public static final SWATCreativeTabs SWATParts = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatparts") {
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
 			return SWATItems.AK_47_HANDLE;
