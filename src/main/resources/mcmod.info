@@ -1,0 +1,11 @@
+[
+{
+  "description": "Example placeholder mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
