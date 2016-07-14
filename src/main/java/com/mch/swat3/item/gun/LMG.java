@@ -1,4 +1,4 @@
-package com.mch.swat3.gun;
+package com.mch.swat3.item.gun;
 
 public class LMG extends GunBase {
 

@@ -1,4 +1,4 @@
-package com.mch.swat3.gun;
+package com.mch.swat3.item.gun;
 
 import com.mch.swat3.item.SWATItem;
 

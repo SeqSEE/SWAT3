@@ -1,4 +1,4 @@
-package com.mch.swat3.explosives;
+package com.mch.swat3.item.explosive;
 
 public class GrenadeFlashBang extends GrenadeBase{
 
