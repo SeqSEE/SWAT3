@@ -1,10 +1,15 @@
 [
 {
+  "modid": "swat3",
+  "name": "SWAT3",
   "description": "Example placeholder mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
+  "authorList": ["SeqSEE, EPIICTHUNDERCAT, Redcubixx"],
+  "credits": "",
+  "logoFile": "icon.png",
   "screenshots": [],
   "dependencies": []
 }
