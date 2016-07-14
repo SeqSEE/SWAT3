@@ -1,5 +1,6 @@
 package com.mch.swat3.item;
 
+import com.mch.swat3.init.SWATCreativeTabs;
 import com.mch.swat3.init.SWATItems;
 
 import net.minecraft.item.Item;
@@ -10,6 +11,7 @@ public class SWATItem extends Item{
 		this.setRegistryName(name.toLowerCase());
 		this.setUnlocalizedName(name.toLowerCase());
 		this.setMaxStackSize(maxStack);
+		this.setCreativeTab(SWATCreativeTabs.SWATWeapons);
 		addToItems(this);
 	}
 
