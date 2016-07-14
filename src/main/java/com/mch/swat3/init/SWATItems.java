@@ -21,7 +21,7 @@ public class SWATItems {
 	public static Item AK_47_HANDLE = new SWATItem("AK_47_HANDLE", 1);
 	public static Item AK_47_BARREL_HOUSING = new SWATItem("AK_47_BARREL_HOUSING", 1);
 	public static Item AK_47_BARREL = new SWATItem("AK_47_BARREL", 1);
-	public static Item AK_47 = new SWATItem("AK_47", 1);
+	public static Item AK_47;
 	
 	
 	// Returns a list. Each Item Class should add the item(s) to this list.
