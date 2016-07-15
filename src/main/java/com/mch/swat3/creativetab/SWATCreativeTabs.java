@@ -1,4 +1,6 @@
-package com.mch.swat3.init;
+package com.mch.swat3.creativetab;
+
+import com.mch.swat3.init.SWATItems;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -13,7 +15,7 @@ public class SWATCreativeTabs extends CreativeTabs {
 	public static final SWATCreativeTabs SWATCombat = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatcombat") {
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
-			return SWATItems.AK_47_HANDLE;
+			return SWATItems.AK_47;
 		}
 	};
 	public static final SWATCreativeTabs SWATHealing = new SWATCreativeTabs(CreativeTabs.getNextID(), "swathealing") {

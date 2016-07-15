@@ -1,5 +1,5 @@
 package com.mch.swat3.item.explosive;
 
-public class GrenadeBase {
+public class ThrownBase {
 
 }
