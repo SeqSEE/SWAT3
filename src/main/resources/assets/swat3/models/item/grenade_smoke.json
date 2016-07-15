@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "swat:items/grenade_smoke"
+        "layer0": "swat3:items/grenade_smoke"
     }
 }

@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "swat:items/riot_shield"
+        "layer0": "swat3:items/riot_shield"
     }
 }

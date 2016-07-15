@@ -1,6 +1,28 @@
 {
-    "parent": "item/generated",
+    "parent": "builtin/generated",
     "textures": {
-        "layer0": "swat:items/ak_47"
+        "layer0": "swat3:items/ak_47"
+    },
+    "display": {
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 2, 0],
+            "scale":[ 1, 1, 0.6 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 13, 7],
+            "scale":[ 1, 1, 0.6 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ -45, 110, 15 ],
+            "translation": [ -2, 2, -3 ],
+            "scale": [ 1, 1, 0.6 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 1.13, 3.2, 1.13],
+            "scale": [ 1, 1, 0.6 ]
+        }
     }
 }

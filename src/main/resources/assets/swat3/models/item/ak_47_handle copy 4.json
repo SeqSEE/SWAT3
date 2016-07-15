@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "swat:items/ak_47_handle"
+        "layer0": "swat3:items/ak_47_handle"
     }
 }

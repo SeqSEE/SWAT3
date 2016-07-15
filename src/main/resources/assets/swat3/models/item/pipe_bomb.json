@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "swat:items/pipe_bomb"
+        "layer0": "swat3:items/pipe_bomb"
     }
 }

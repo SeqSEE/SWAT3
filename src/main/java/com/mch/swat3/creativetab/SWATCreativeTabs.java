@@ -33,7 +33,6 @@ public class SWATCreativeTabs extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-
 		return null;
 	}
 

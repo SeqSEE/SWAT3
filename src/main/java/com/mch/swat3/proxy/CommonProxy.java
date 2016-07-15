@@ -18,8 +18,11 @@ public class CommonProxy {
 	}
 
 	public void init(FMLInitializationEvent event) {
-		
-		
+		registerRender(event);
+	}
+	
+	public void registerRender(FMLInitializationEvent event) {
+		//Do nothing here
 	}
 
 }
