@@ -3,9 +3,17 @@ itemGroup.swathealing=SWAT Healing
 itemGroup.swatparts=SWAT Parts
 
 
-item.ak_47_butt.name=AK-47 BUTT
-item.ak_47_chasis.name=AK-47 Chasis
-item.ak_47_handle.name=AK-47 Handle
+item.ak_47_butt.name=AK-47 Stock
+item.ak_47_chasis.name=AK-47 Body
+item.ak_47_handle.name=AK-47 Grip
 item.ak_47_barrel_housing.name=AK-47 Barrel Housing
 item.ak_47_barrel.name=AK-47 Barrel
 item.ak_47.name=AK-47
+item.ballistic_knife_blade.name=Ballistic Knife Blade
+item.ballistic_knife_empty.name=Ballistic Knife Empty
+item.ballistic_knife.name=Ballistic Knife
+item.bulletproof_vest.name=Bulletproof Vest
+item.glock_clip.name=Glock Clip
+item.glock_handle.name=Glock Handle
+item.glock_slide.name=Glock Slide
+item.glock.name=Glock

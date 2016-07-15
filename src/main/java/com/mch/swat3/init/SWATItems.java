@@ -31,7 +31,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class SWATItems {
 
 	public static List<Item> items = new ArrayList();
-	public static Item AK_47_STOCK = new GunParts("AK_47_BUTT", 1);
+	public static Item AK_47_STOCK = new GunParts("AK_47_STOCK", 1);
 	public static Item AK_47_BODY = new GunParts("AK_47_BODY", 1);
 	public static Item AK_47_GRIP = new GunParts("AK_47_GRIP", 1);
 	public static Item AK_47_BARREL_HOUSING = new GunParts("AK_47_BARREL_HOUSING", 1);
@@ -61,7 +61,9 @@ public class SWATItems {
 	public static Item SHOTGUN_BARREL_0 = new GunParts("SHOTGUN_BARREL_0", 1);
 	public static Item SHOTGUN_BARREL_1 = new GunParts("SHOTGUN_BARREL_1", 1);
 	public static Item SCOPE_0 = new GunParts("SCOPE_0", 1);
-	public static Item SHOTGUN_CHASIS = new GunParts("SHOTGUN_CHASIS", 1);
+	public static Item SHOTGUN_BODY = new GunParts("SHOTGUN_BODY", 1);
+
+	
 
 	
 	
