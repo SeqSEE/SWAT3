@@ -2,12 +2,11 @@ package com.mch.swat3.item;
 
 import com.mch.swat3.creativetab.SWATCreativeTabs;
 
-import net.minecraft.item.ItemFood;
 
-public class SWATItemProvision extends ItemFood{
+public class SWATItemProvision extends SWATItem{
 
-	public SWATItemProvision(String name, int maxStack, int amount, float saturation, boolean isWolfFood) {
-		super(amount, saturation, isWolfFood);
+	public SWATItemProvision(String name, int maxStack) {
+		super(name, maxStack);
 		this.setCreativeTab(SWATCreativeTabs.SWATProvisions);
 	}
 
