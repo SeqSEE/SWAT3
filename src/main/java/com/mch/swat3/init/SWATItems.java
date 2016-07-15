@@ -5,15 +5,19 @@ import java.util.List;
 
 import com.mch.swat3.item.SWATItemArmor;
 import com.mch.swat3.item.SWATItemProvision;
+import com.mch.swat3.item.SWATMelee;
 import com.mch.swat3.item.SWATProjectile;
+import com.mch.swat3.item.SWATShield;
 import com.mch.swat3.item.explosive.grenade.ExplosivePart;
 import com.mch.swat3.item.explosive.grenade.GrenadeConcussion;
 import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
+import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;
 import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
 import com.mch.swat3.item.gun.AssualtRifle;
 import com.mch.swat3.item.gun.GunClip;
 import com.mch.swat3.item.gun.GunParts;
 import com.mch.swat3.item.gun.Pistol;
+import com.mch.swat3.item.gun.SMG;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
@@ -46,6 +50,24 @@ public class SWATItems {
 	public static Item GRENADE_FLASHBANG = new GrenadeFlashBang("GRENADE_FLASHBANG", 8);
 	public static Item GRENADE_SMOKE = new GrenadeSmoke("GRENADE_SMOKE", 8);
 	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 1);
+	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 1);
+	public static Item MP_5_BODY = new GunParts("MP_5_BODY", 1);
+	public static Item MP_5_CLIP = new GunParts("MP_5_CLIP", 1);
+	public static Item MP_5_GRIP = new GunParts("MP_5_GRIP", 1);
+	public static Item MP_5 = new SMG("MP_5", 1);
+	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK", 1);
+	public static Item PIPE_BOMB = new GrenadePipeBomb("PIPE_BOMB", 1);
+	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD", 1);
+	public static Item SHOTGUN_BARREL_0 = new GunParts("SHOTGUN_BARREL_0", 1);
+	public static Item SHOTGUN_BARREL_1 = new GunParts("SHOTGUN_BARREL_1", 1);
+	public static Item SCOPE_0 = new GunParts("SCOPE_0", 1);
+	public static Item SHOTGUN_CHASIS = new GunParts("SHOTGUN_CHASIS", 1);
+
+	
+	
+	
+	
+	
 	
 	
 	
