@@ -3,7 +3,7 @@
   "modid": "swat3",
   "name": "SWAT3",
   "description": "Example placeholder mod.",
-  "version": "${version}",
+  "version": "1.10.2.2011.0.1",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
