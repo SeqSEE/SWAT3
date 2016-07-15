@@ -10,6 +10,9 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 
 @Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VER)
 public class SWAT3 {
@@ -34,6 +37,11 @@ public class SWAT3 {
     @EventHandler
     private void init(FMLInitializationEvent event) {
     	proxy.init(event);
+    }
+    
+    @SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
+    public void onPlayerTick(PlayerTickEvent event) {
+    	proxy.VersionCheck(event);
     }
     
 }
