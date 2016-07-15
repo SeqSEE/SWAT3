@@ -1,6 +1,7 @@
-itemGroup.swatcombat=SWAT Combat
-itemGroup.swathealing=SWAT Healing
-itemGroup.swatparts=SWAT Parts
+itemGroup.swatweapons=SWAT³ Weapons
+itemGroup.swatarmor=SWAT³ Armor
+itemGroup.swatprovisions=SWAT³ Provisions
+itemGroup.swatparts=SWAT³ Parts
 
 
 item.ak_47_butt.name=AK-47 Stock
