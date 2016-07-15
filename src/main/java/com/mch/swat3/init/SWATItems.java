@@ -6,9 +6,14 @@ import java.util.List;
 import com.mch.swat3.item.SWATItemArmor;
 import com.mch.swat3.item.SWATItemProvision;
 import com.mch.swat3.item.SWATProjectile;
+import com.mch.swat3.item.explosive.grenade.ExplosivePart;
+import com.mch.swat3.item.explosive.grenade.GrenadeConcussion;
 import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
+import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
 import com.mch.swat3.item.gun.AssualtRifle;
+import com.mch.swat3.item.gun.GunClip;
 import com.mch.swat3.item.gun.GunParts;
+import com.mch.swat3.item.gun.Pistol;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
@@ -28,12 +33,20 @@ public class SWATItems {
 	public static Item AK_47_BARREL_HOUSING = new GunParts("AK_47_BARREL_HOUSING", 1);
 	public static Item AK_47_BARREL = new GunParts("AK_47_BARREL", 1);
 	public static Item AK_47 = new AssualtRifle("AK_47", 1);
-	public static Item GRENADE_FLASHBANG = new GrenadeFlashBang("GRENADE_FLASHBANG", 5);
 	public static Item BALLISTIC_KNIFE_BLADE = new GunParts("BALLISTIC_KNIVE_BLADE", 1);
 	public static Item BULLETPROOF_VEST = new SWATItemArmor("BULLETPROOF_VEST", SWATItemArmor.BULLETPROOF_VEST, 1, EntityEquipmentSlot.CHEST);
 	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1, 0, 0, false);
 	public static Item BALLISTIC_KNIFE_EMPTY = new GunParts("BALLISTIC_KNIFE_EMPTY", 1);
 	public static Item BALLISTIC_KNIFE = new SWATProjectile("BALLISTIC_KNIFE", 1);
+	public static Item GLOCK_CLIP = new GunClip("GLOCK_CLIP", 5);
+	public static Item GLOCK_HANDLE = new GunParts("GLOCK_HANDLE", 1);
+	public static Item GLOCK_SIDE = new GunParts("GLOCK_SIDE", 1);
+	public static Item GLOCK = new Pistol("GLOCK", 1);
+	public static Item GRENADE_CONCUSSION = new GrenadeConcussion("GRENADE_CONCUSSION", 8);
+	public static Item GRENADE_FLASHBANG = new GrenadeFlashBang("GRENADE_FLASHBANG", 8);
+	public static Item GRENADE_SMOKE = new GrenadeSmoke("GRENADE_SMOKE", 8);
+	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 1);
+	
 	
 	
 	// Returns a list. Each Item Class should add the item(s) to this list.
