@@ -38,7 +38,7 @@ public class SWATItems {
 	public static Item AK_47_BARREL_HOUSING = new GunParts("AK_47_BARREL_HOUSING", 1);
 	public static Item AK_47_BARREL = new GunParts("AK_47_BARREL", 1);
 	public static Item AK_47 = new AssualtRifle("AK_47", 1);
-	public static Item BALLISTIC_KNIFE_BLADE = new GunParts("BALLISTIC_KNIVE_BLADE", 1);
+	public static Item BALLISTIC_KNIFE_BLADE = new GunParts("BALLISTIC_KNIFE_BLADE", 1);
 	public static Item BULLETPROOF_VEST = new SWATItemArmor("BULLETPROOF_VEST", SWATItemArmor.BULLETPROOF_VEST, 1, EntityEquipmentSlot.CHEST);
 	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1, 0, 0, false);
 	public static Item BALLISTIC_KNIFE_EMPTY = new GunParts("BALLISTIC_KNIFE_EMPTY", 1);
