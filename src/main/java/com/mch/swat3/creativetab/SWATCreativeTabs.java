@@ -37,7 +37,7 @@ public class SWATCreativeTabs extends CreativeTabs {
 	public static final SWATCreativeTabs SWATParts = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatparts") {
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
-			return SWATItems.AK_47_CHASIS;
+			return SWATItems.AK_47_BODY;
 		}
 	};
 
