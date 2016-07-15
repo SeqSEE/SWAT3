@@ -2,5 +2,13 @@
     "parent": "item/generated",
     "textures": {
         "layer0": "swat3:items/glock"
-    }
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "aiming": 1
+            },
+            "model": "swat3:item/glock_aiming"
+        }
+    ]
 }

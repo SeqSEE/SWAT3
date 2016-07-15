@@ -42,11 +42,19 @@ public class SWATItems {
 	public static Item BALLISTIC_KNIFE = new SWATProjectile("BALLISTIC_KNIFE", 1);
 	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK", 1);
 	
+	public static Item SNIPER_CLIP = new SWATAmmo("SNIPER_CLIP", 5, 30);
 	public static Item SHOTGUN_MAGAZINE = new SWATAmmo("SHOTGUN_MAGAZINE", 1, 10);
 	public static Item AK_47_CLIP = new SWATAmmo("AK_47_CLIP", 5, 30);
 	public static Item MP_5_CLIP = new SWATAmmo("MP_5_CLIP", 5, 30);
 	public static Item GLOCK_CLIP = new SWATAmmo("GLOCK_CLIP", 5, 15);
 	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 15, 1);
+		
+	public static Item SNIPER_BACK = new GunParts("SNIPER_BACK", 1);
+	public static Item SNIPER_BARREL = new GunParts("SNIPER_BARREL", 1);
+	public static Item SNIPER_BODY = new GunParts("SNIPER_BODY", 1);
+	public static Item SNIPER_STOCK = new GunParts("SNIPER_STOCK", 1);
+	public static Item SNIPER_SUPPORT = new GunParts("SNIPER_SUPPORT", 1);
+	public static Item SNIPER_SCOPE = new GunParts("SNIPER_SCOPE", 1);
 		
 	public static Item AK_47_BODY = new GunParts("AK_47_BODY", 1);
 	public static Item AK_47_GRIP = new GunParts("AK_47_GRIP", 1);
