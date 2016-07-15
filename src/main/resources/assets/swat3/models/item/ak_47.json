@@ -15,9 +15,14 @@
             "scale":[ 1, 1, 0.6 ]
         },
         "thirdperson_righthand": {
-            "rotation": [ -45, 110, 15 ],
-            "translation": [ -2, 2, -3 ],
-            "scale": [ 1, 1, 0.6 ]
+            "rotation": [ -70, 90, 28 ],
+            "translation": [ -1, 0.5, -3.2 ],
+            "scale": [ 0.8, 0.8, 0.5 ]
+        },
+		"thirdperson_lefthand": {
+            "rotation": [ -70, 90, 28 ],
+            "translation": [ -1, 0.5, -3.2 ],
+            "scale": [ 0.8, 0.8, 0.5 ]
         },
         "firstperson_righthand": {
             "rotation": [ 0, 0, 0 ],
