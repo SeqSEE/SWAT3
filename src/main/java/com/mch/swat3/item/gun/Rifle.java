@@ -4,7 +4,6 @@ public class Rifle extends GunBase{
 
 	public Rifle(String name, int maxStack) {
 		super(name, maxStack);
-	
 	}
 
 }

@@ -14,7 +14,7 @@ import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
 import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;
 import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
 import com.mch.swat3.item.gun.AssualtRifle;
-import com.mch.swat3.item.gun.GunClip;
+import com.mch.swat3.item.gun.GunAmmo;
 import com.mch.swat3.item.gun.GunParts;
 import com.mch.swat3.item.gun.Pistol;
 import com.mch.swat3.item.gun.SMG;
@@ -31,6 +31,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class SWATItems {
 
 	public static List<Item> items = new ArrayList();
+	public static Item AK_47_CLIP = new GunAmmo("AK_47_CLIP", 5, 30);
 	public static Item AK_47_STOCK = new GunParts("AK_47_STOCK", 1);
 	public static Item AK_47_BODY = new GunParts("AK_47_BODY", 1);
 	public static Item AK_47_GRIP = new GunParts("AK_47_GRIP", 1);
@@ -42,7 +43,7 @@ public class SWATItems {
 	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1, 0, 0, false);
 	public static Item BALLISTIC_KNIFE_EMPTY = new GunParts("BALLISTIC_KNIFE_EMPTY", 1);
 	public static Item BALLISTIC_KNIFE = new SWATProjectile("BALLISTIC_KNIFE", 1);
-	public static Item GLOCK_CLIP = new GunClip("GLOCK_CLIP", 5);
+	public static Item GLOCK_CLIP = new GunAmmo("GLOCK_CLIP", 5, 15);
 	public static Item GLOCK_HANDLE = new GunParts("GLOCK_HANDLE", 1);
 	public static Item GLOCK_SIDE = new GunParts("GLOCK_SIDE", 1);
 	public static Item GLOCK = new Pistol("GLOCK", 1);
