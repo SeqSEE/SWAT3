@@ -12,22 +12,31 @@ public class SWATCreativeTabs extends CreativeTabs {
 		super(index, label);
 	}
 
-	public static final SWATCreativeTabs SWATCombat = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatcombat") {
+	public static final SWATCreativeTabs SWATWeapons = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatweapons") {
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
 			return SWATItems.AK_47;
 		}
 	};
-	public static final SWATCreativeTabs SWATHealing = new SWATCreativeTabs(CreativeTabs.getNextID(), "swathealing") {
+	
+	public static final SWATCreativeTabs SWATArmor = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatarmor") {
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
-			return SWATItems.AK_47_HANDLE;
+			return SWATItems.BULLETPROOF_VEST;
 		}
 	};
+	
+	public static final SWATCreativeTabs SWATProvisions = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatprovisions") {
+		@SideOnly(Side.CLIENT)
+		public Item getTabIconItem() {
+			return SWATItems.HEALTH_PACK_LARGE;
+		}
+	};
+	
 	public static final SWATCreativeTabs SWATParts = new SWATCreativeTabs(CreativeTabs.getNextID(), "swatparts") {
 		@SideOnly(Side.CLIENT)
 		public Item getTabIconItem() {
-			return SWATItems.AK_47_HANDLE;
+			return SWATItems.AK_47_CHASIS;
 		}
 	};
 

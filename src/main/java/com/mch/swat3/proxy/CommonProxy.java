@@ -2,6 +2,7 @@ package com.mch.swat3.proxy;
 
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
+import com.mch.swat3.util.VersionHandler;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
