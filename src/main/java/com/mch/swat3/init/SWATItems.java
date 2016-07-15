@@ -15,7 +15,6 @@ import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;
 import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
 import com.mch.swat3.item.gun.AssualtRifle;
 import com.mch.swat3.item.gun.GunAmmo;
-import com.mch.swat3.item.gun.GunClip;
 import com.mch.swat3.item.gun.GunParts;
 import com.mch.swat3.item.gun.Pistol;
 import com.mch.swat3.item.gun.SMG;
