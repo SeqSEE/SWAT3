@@ -8,7 +8,7 @@ import com.mch.swat3.item.SWATItemProvision;
 import com.mch.swat3.item.SWATMelee;
 import com.mch.swat3.item.SWATProjectile;
 import com.mch.swat3.item.SWATShield;
-import com.mch.swat3.item.explosive.grenade.ExplosivePart;
+import com.mch.swat3.item.explosive.ExplosivePart;
 import com.mch.swat3.item.explosive.grenade.GrenadeConcussion;
 import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
 import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;

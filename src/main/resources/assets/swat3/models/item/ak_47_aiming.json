@@ -34,13 +34,5 @@
             "translation": [ 1.13, 0, -1.13],
             "scale": [ 0.7, 0.7, 0.4 ]
         }
-    },
-    "overrides": [
-        {
-            "predicate": {
-                "aiming": 1
-            },
-            "model": "swat3:item/ak_47_aiming"
-        }
-    ]
+    }
 }

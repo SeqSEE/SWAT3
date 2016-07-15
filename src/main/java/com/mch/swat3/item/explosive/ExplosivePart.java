@@ -1,4 +1,4 @@
-package com.mch.swat3.item.explosive.grenade;
+package com.mch.swat3.item.explosive;
 
 import com.mch.swat3.creativetab.SWATCreativeTabs;
 import com.mch.swat3.item.SWATItem;
