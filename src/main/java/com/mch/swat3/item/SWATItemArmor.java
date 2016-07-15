@@ -18,8 +18,8 @@ public class SWATItemArmor extends ItemArmor {
 	public SWATItemArmor(String name, ArmorMaterial material, int renderIndex, EntityEquipmentSlot armorType) {
         super(material, renderIndex, armorType);
         this.setMaxStackSize(1);
-        this.setRegistryName(name);
-		this.setUnlocalizedName(name);
+        this.setRegistryName(name.toLowerCase());
+		this.setUnlocalizedName(name.toLowerCase());
 		this.setCreativeTab(SWATCreativeTabs.SWATArmor);
 		addToItems(this);
 	}
