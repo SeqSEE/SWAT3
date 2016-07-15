@@ -15,6 +15,7 @@ import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;
 import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
 import com.mch.swat3.item.gun.AssualtRifle;
 import com.mch.swat3.item.gun.GunAmmo;
+import com.mch.swat3.item.gun.GunClip;
 import com.mch.swat3.item.gun.GunParts;
 import com.mch.swat3.item.gun.Pistol;
 import com.mch.swat3.item.gun.SMG;
@@ -31,8 +32,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class SWATItems {
 
 	public static List<Item> items = new ArrayList();
-	public static Item AK_47_CLIP = new GunAmmo("AK_47_CLIP", 5, 30);
 	public static Item AK_47_STOCK = new GunParts("AK_47_STOCK", 1);
+	public static Item AK_47_CLIP = new GunAmmo("AK_47_CLIP", 5, 30);
 	public static Item AK_47_BODY = new GunParts("AK_47_BODY", 1);
 	public static Item AK_47_GRIP = new GunParts("AK_47_GRIP", 1);
 	public static Item AK_47_BARREL_HOUSING = new GunParts("AK_47_BARREL_HOUSING", 1);
@@ -53,16 +54,19 @@ public class SWATItems {
 	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 1);
 	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 1);
 	public static Item MP_5_BODY = new GunParts("MP_5_BODY", 1);
-	public static Item MP_5_CLIP = new GunParts("MP_5_CLIP", 1);
+	public static Item MP_5_CLIP = new GunAmmo("MP_5_CLIP", 5, 30);
 	public static Item MP_5_GRIP = new GunParts("MP_5_GRIP", 1);
 	public static Item MP_5 = new SMG("MP_5", 1);
 	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK", 1);
 	public static Item PIPE_BOMB = new GrenadePipeBomb("PIPE_BOMB", 1);
-	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD");
+	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD", 1);
 	public static Item SHOTGUN_BARREL_0 = new GunParts("SHOTGUN_BARREL_0", 1);
 	public static Item SHOTGUN_BARREL_1 = new GunParts("SHOTGUN_BARREL_1", 1);
 	public static Item SCOPE_0 = new GunParts("SCOPE_0", 1);
 	public static Item SHOTGUN_BODY = new GunParts("SHOTGUN_BODY", 1);
+	public static Item SHOTGUN_GRIP = new GunParts("SHOTGUN_GRIP", 1);
+	public static Item SHOTGUN_MAGAZINE = new GunAmmo("SHOTGUN_MAGAZINE", 1, 10);
+
 
 	
 
