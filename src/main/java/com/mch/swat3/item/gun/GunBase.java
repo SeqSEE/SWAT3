@@ -7,7 +7,7 @@ public class GunBase extends SWATItem{
 
 	public GunBase(String name, int maxStack) {
 		super(name, maxStack);
-		this.setCreativeTab(SWATCreativeTabs.SWATCombat);
+		this.setCreativeTab(SWATCreativeTabs.SWATWeapons);
 	
 	}
 

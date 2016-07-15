@@ -1,6 +1,7 @@
 package com.mch.swat3.creativetab;
 
 import com.mch.swat3.init.SWATItems;
+import com.mch.swat3.item.SWATItemProvision;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

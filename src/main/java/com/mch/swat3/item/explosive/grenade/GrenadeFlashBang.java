@@ -4,4 +4,9 @@ import com.mch.swat3.item.explosive.ThrownBase;
 
 public class GrenadeFlashBang extends ThrownBase{
 
+	public GrenadeFlashBang(String name, int maxStack) {
+		super(name, maxStack);
+		// TODO Auto-generated constructor stub
+	}
+
 }

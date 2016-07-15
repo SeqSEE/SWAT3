@@ -1,5 +1,12 @@
 package com.mch.swat3.item.explosive;
 
-public class ThrownBase {
+import com.mch.swat3.item.SWATItem;
+
+public class ThrownBase extends SWATItem{
+
+	public ThrownBase(String name, int maxStack) {
+		super(name, maxStack);
+
+	}
 
 }

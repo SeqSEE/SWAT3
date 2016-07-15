@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mch.swat3.item.SWATItem;
+import com.mch.swat3.item.SWATItemArmor;
+import com.mch.swat3.item.SWATItemProvision;
 import com.mch.swat3.item.explosive.ThrownBase;
 import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
 import com.mch.swat3.item.gun.AssualtRifle;
@@ -27,7 +29,8 @@ public class SWATItems {
 	public static Item AK_47 = new AssualtRifle("AK_47", 1);
 	public static Item GRENADE_FLASHBANG = new GrenadeFlashBang("GRENADE_FLASHBANG", 5);
 	public static Item BALLISTIC_KNIVE_BLADE = new SWATItem("BALLISTIC_KNIVE_BLADE", 1);
-
+	public static Item BULLETPROOF_VEST = new SWATItemArmor("BULLETPROOF_VEST", 1);
+	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1, 0, 0, false);
 	
 	
 	
