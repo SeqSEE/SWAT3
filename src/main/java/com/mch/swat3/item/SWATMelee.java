@@ -1,10 +1,12 @@
 package com.mch.swat3.item;
 
+import com.mch.swat3.creativetab.SWATCreativeTabs;
+
 public class SWATMelee extends SWATItem{
 
 	public SWATMelee(String name, int maxStack) {
 		super(name, maxStack);
-		// TODO Auto-generated constructor stub
+		this.setCreativeTab(SWATCreativeTabs.SWATWeapons);
 	}
 
 }
