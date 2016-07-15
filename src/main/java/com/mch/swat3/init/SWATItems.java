@@ -61,7 +61,6 @@ public class SWATItems {
 	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD");
 	public static Item SHOTGUN_BARREL_0 = new GunParts("SHOTGUN_BARREL_0", 1);
 	public static Item SHOTGUN_BARREL_1 = new GunParts("SHOTGUN_BARREL_1", 1);
-	public static Item SCOPE_0 = new GunParts("SCOPE_0", 1);
 	public static Item SHOTGUN_BODY = new GunParts("SHOTGUN_BODY", 1);
 	public static Item SHOTGUN_GRIP = new GunParts("SHOTGUN_GRIP", 1);
 	public static Item SHOTGUN_MAGAZINE = new GunAmmo("SHOTGUN_MAGAZINE", 1, 10);
