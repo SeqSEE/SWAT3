@@ -1,11 +1,31 @@
 package com.mch.swat3.item;
 
+import com.mch.swat3.creativetab.SWATCreativeTabs;
+import com.mch.swat3.init.SWATItems;
+
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
 
-public class SWATItemArmor extends Item {
+public class SWATItemArmor extends ItemArmor {
 
-	public SWATItemArmor(String string, int maxStack) {
-		// TODO Auto-generated constructor stub
+	public static ArmorMaterial BULLETPROOF_VEST = EnumHelper.addArmorMaterial("BULLETPROOF_VEST", "swat3:bulletproof_vest", 7, new int[]{0, 0, 7, 0}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0F);
+
+	
+	public SWATItemArmor(String name, ArmorMaterial material, int renderIndex, EntityEquipmentSlot armorType) {
+        super(material, renderIndex, armorType);
+        this.setMaxStackSize(1);
+        this.setRegistryName(name);
+		this.setUnlocalizedName(name);
+		this.setCreativeTab(SWATCreativeTabs.SWATArmor);
+		addToItems(this);
+	}
+
+	private void addToItems(Item item) {
+		SWATItems.items.add(item);
 	}
 
 }
