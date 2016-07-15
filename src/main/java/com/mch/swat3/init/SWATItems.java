@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mch.swat3.item.SWATItem;
+import com.mch.swat3.item.explosive.ThrownBase;
+import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
 import com.mch.swat3.item.gun.AssualtRifle;
 
 import net.minecraft.client.Minecraft;
@@ -23,6 +25,10 @@ public class SWATItems {
 	public static Item AK_47_BARREL_HOUSING = new SWATItem("AK_47_BARREL_HOUSING", 1);
 	public static Item AK_47_BARREL = new SWATItem("AK_47_BARREL", 1);
 	public static Item AK_47 = new AssualtRifle("AK_47", 1);
+	public static Item GRENADE_FLASHBANG = new GrenadeFlashBang("GRENADE_FLASHBANG", 5);
+	public static Item BALLISTIC_KNIVE_BLADE = new SWATItem("BALLISTIC_KNIVE_BLADE", 1);
+
+	
 	
 	
 	// Returns a list. Each Item Class should add the item(s) to this list.

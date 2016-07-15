@@ -1,5 +1,7 @@
 package com.mch.swat3.item.gun;
 
-public class GunParts {
+import com.mch.swat3.init.SWATItems;
+
+public class GunParts extends SWATItems{
 
 }
