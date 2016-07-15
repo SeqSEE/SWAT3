@@ -59,7 +59,7 @@ public class SWATItems {
 	public static Item MP_5 = new SMG("MP_5", 1);
 	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK", 1);
 	public static Item PIPE_BOMB = new GrenadePipeBomb("PIPE_BOMB", 1);
-	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD", 1);
+	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD");
 	public static Item SHOTGUN_BARREL_0 = new GunParts("SHOTGUN_BARREL_0", 1);
 	public static Item SHOTGUN_BARREL_1 = new GunParts("SHOTGUN_BARREL_1", 1);
 	public static Item SCOPE_0 = new GunParts("SCOPE_0", 1);
