@@ -9,6 +9,7 @@ import com.mch.swat3.item.SWATItemProvision;
 import com.mch.swat3.item.explosive.ThrownBase;
 import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
 import com.mch.swat3.item.gun.AssualtRifle;
+import com.mch.swat3.item.gun.GunParts;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
@@ -21,17 +22,17 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class SWATItems {
 
 	public static List<Item> items = new ArrayList();
-	public static Item AK_47_BUTT = new SWATItem("AK_47_BUTT", 1);
-	public static Item AK_47_CHASIS = new SWATItem("AK_47_CHASIS", 1);
-	public static Item AK_47_HANDLE = new SWATItem("AK_47_HANDLE", 1);
-	public static Item AK_47_BARREL_HOUSING = new SWATItem("AK_47_BARREL_HOUSING", 1);
-	public static Item AK_47_BARREL = new SWATItem("AK_47_BARREL", 1);
+	public static Item AK_47_BUTT = new GunParts("AK_47_BUTT", 1);
+	public static Item AK_47_CHASIS = new GunParts("AK_47_CHASIS", 1);
+	public static Item AK_47_HANDLE = new GunParts("AK_47_HANDLE", 1);
+	public static Item AK_47_BARREL_HOUSING = new GunParts("AK_47_BARREL_HOUSING", 1);
+	public static Item AK_47_BARREL = new GunParts("AK_47_BARREL", 1);
 	public static Item AK_47 = new AssualtRifle("AK_47", 1);
 	public static Item GRENADE_FLASHBANG = new GrenadeFlashBang("GRENADE_FLASHBANG", 5);
-	public static Item BALLISTIC_KNIVE_BLADE = new SWATItem("BALLISTIC_KNIVE_BLADE", 1);
+	public static Item BALLISTIC_KNIFE_BLADE = new GunParts("BALLISTIC_KNIVE_BLADE", 1);
 	public static Item BULLETPROOF_VEST = new SWATItemArmor("BULLETPROOF_VEST", 1);
 	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1, 0, 0, false);
-	
+	public static Item BALLISTIC_KNIFE_EMPTY = new GunParts("BALLISTIC_KNIFE_EMPTY", 1);
 	
 	
 	// Returns a list. Each Item Class should add the item(s) to this list.
