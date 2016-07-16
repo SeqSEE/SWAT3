@@ -16,6 +16,7 @@ import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;
 import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
 import com.mch.swat3.item.gun.AssualtRifle;
 import com.mch.swat3.item.gun.GunParts;
+import com.mch.swat3.item.gun.HeavyMachineGun;
 import com.mch.swat3.item.gun.Pistol;
 import com.mch.swat3.item.gun.Rifle;
 import com.mch.swat3.item.gun.SMG;
@@ -35,8 +36,7 @@ public class SWATItems {
 	
 	public static List<Item> items = new ArrayList();
 
-	private static List<String> tooltip;
-	
+	public static Item MINIGUN = new HeavyMachineGun("MINIGUN", 1);
 	public static Item SNIPER = new Rifle("SNIPER", 1);
 	public static Item SHOTGUN = new Shotgun("SHOTGUN", 1);
 	public static Item AK_47 = new AssualtRifle("AK_47", 1);
