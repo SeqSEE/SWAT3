@@ -20,23 +20,14 @@
             "scale": [ 0.45, 0.6, 0.7 ]
         },
         "firstperson_righthand": {
-            "rotation": [ 0, 90, 0 ],
-            "translation": [ 0, 0, 0 ],
-            "scale": [ 1, 1, 1 ]
+            "rotation": [ 30, 120, 15 ],
+            "translation": [ -1, 2, 0 ],
+            "scale": [ 0.45, 0.6, 0.7 ]
         },
 		"firstperson_lefthand": {
-            "rotation": [ 0, -90, 0 ],
-            "translation": [ 0, 0, 0 ],
-            "scale": [ 1, 1, 1 ]
+            "rotation": [ 30, -65, -15 ],
+            "translation": [ -1, 2, 0 ],
+            "scale": [ 0.45, 0.6, 0.7 ]
         }
-    },
-    "overrides": [
-        {
-            "predicate": {
-                "aiming": 1
-            },
-            "model": "swat3:item/mp_5_aiming"
-        }
-    ]
-	
+    }	
 }
