@@ -3,6 +3,7 @@ package com.mch.swat3.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mch.swat3.item.SWATAmmo;
 import com.mch.swat3.item.SWATItemArmor;
 import com.mch.swat3.item.SWATItemProvision;
 import com.mch.swat3.item.SWATMelee;
@@ -14,7 +15,6 @@ import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
 import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;
 import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
 import com.mch.swat3.item.gun.AssualtRifle;
-import com.mch.swat3.item.gun.SWATAmmo;
 import com.mch.swat3.item.gun.GunParts;
 import com.mch.swat3.item.gun.Pistol;
 import com.mch.swat3.item.gun.Rifle;
@@ -32,7 +32,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class SWATItems {
 
+	
 	public static List<Item> items = new ArrayList();
+
+	private static List<String> tooltip;
 	
 	public static Item SNIPER = new Rifle("SNIPER", 1);
 	public static Item SHOTGUN = new Shotgun("SHOTGUN", 1);

@@ -1,9 +1,8 @@
 package com.mch.swat3.item.gun;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumAction;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumHand;
+import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class AssualtRifle extends GunBase{
 
