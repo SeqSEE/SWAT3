@@ -124,4 +124,6 @@ public class SWATItems {
     	renderItem.getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName().toString(), "inventory"));
 		}
 	}
+	
+	
 }
