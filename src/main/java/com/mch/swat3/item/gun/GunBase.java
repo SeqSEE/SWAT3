@@ -60,38 +60,27 @@ public class GunBase extends ItemBow{
 		SWATItems.items.add(this);
 	}
 	
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStack, World world, EntityPlayer player, EnumHand hand) {
 		
-	@Override
-	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-    {
-        return EnumActionResult.FAIL;
-    }
-	@Override
-	protected boolean isArrow(@Nullable ItemStack stack){
-        return stack != null && stack.getItem() instanceof SWATAmmo;
-    }
-	
-    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
-    {
-    	/*
-        boolean flag = this.findAmmo(playerIn) != null;
+	        /*boolean flag = this.findAmmo(playerIn) != null;
 
-        ActionResult<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory.onArrowNock(itemStackIn, worldIn, playerIn, hand, flag);
-        if (ret != null) return ret;
+	        ActionResult<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory.onArrowNock(itemStackIn, worldIn, playerIn, hand, flag);
+	        if (ret != null) return ret;
 
-        if (!playerIn.capabilities.isCreativeMode && !flag)
-        {
-            return !flag ? new ActionResult(EnumActionResult.FAIL, itemStackIn) : new ActionResult(EnumActionResult.PASS, itemStackIn);
-        }
-        else
-        {
-        */
-            playerIn.setActiveHand(hand);
-            return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
-        }
-    
-	
-	
+	        if (!playerIn.capabilities.isCreativeMode && !flag)
+	        {
+	            return !flag ? new ActionResult(EnumActionResult.FAIL, itemStackIn) : new ActionResult(EnumActionResult.PASS, itemStackIn);
+	        }
+	        else
+	        {
+	            
+	        }
+	        */
+		player.setActiveHand(hand);
+        return new ActionResult(EnumActionResult.SUCCESS, itemStack);
+	}
+
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
 		

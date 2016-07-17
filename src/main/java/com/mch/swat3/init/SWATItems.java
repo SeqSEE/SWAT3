@@ -9,11 +9,10 @@ import com.mch.swat3.item.SWATItemProvision;
 import com.mch.swat3.item.SWATMelee;
 import com.mch.swat3.item.SWATProjectile;
 import com.mch.swat3.item.SWATShield;
+import com.mch.swat3.item.bullet.ItemBullet;
 import com.mch.swat3.item.explosive.ExplosivePart;
-import com.mch.swat3.item.explosive.grenade.GrenadeConcussion;
-import com.mch.swat3.item.explosive.grenade.GrenadeFlashBang;
-import com.mch.swat3.item.explosive.grenade.GrenadePipeBomb;
-import com.mch.swat3.item.explosive.grenade.GrenadeSmoke;
+import com.mch.swat3.item.explosive.grenade.GrenadeActive;
+import com.mch.swat3.item.explosive.grenade.GrenadeInactive;
 import com.mch.swat3.item.gun.AssualtRifle;
 import com.mch.swat3.item.gun.GunParts;
 import com.mch.swat3.item.gun.HeavyMachineGun;
@@ -22,6 +21,7 @@ import com.mch.swat3.item.gun.Rifle;
 import com.mch.swat3.item.gun.SMG;
 import com.mch.swat3.item.gun.Shotgun;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -34,6 +34,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class SWATItems {
 
 	
+	
+
 	public static List<Item> items = new ArrayList();
 
 	public static Item MINIGUN = new HeavyMachineGun("MINIGUN", 1);
@@ -45,6 +47,8 @@ public class SWATItems {
 	public static Item BALLISTIC_KNIFE = new SWATProjectile("BALLISTIC_KNIFE", 1);
 	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK", 1);
 	
+	public static Item BULLET = new ItemBullet("BULLET");
+	public static Item BULLET_LONG = new ItemBullet("BULLET_LONG");
 	public static Item SNIPER_CLIP = new SWATAmmo("SNIPER_CLIP", 5, 30);
 	public static Item SHOTGUN_MAGAZINE = new SWATAmmo("SHOTGUN_MAGAZINE", 1, 10);
 	public static Item AK_47_CLIP = new SWATAmmo("AK_47_CLIP", 5, 30);
@@ -87,12 +91,17 @@ public class SWATItems {
 	public static Item BULLETPROOF_VEST = new SWATItemArmor("BULLETPROOF_VEST", SWATItemArmor.BULLETPROOF_VEST, 1, EntityEquipmentSlot.CHEST);
 	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD");
 	
-	public static Item GRENADE_CONCUSSION = new GrenadeConcussion("GRENADE_CONCUSSION", 4);
-	public static Item GRENADE_FLASHBANG = new GrenadeFlashBang("GRENADE_FLASHBANG", 4);
-	public static Item GRENADE_SMOKE = new GrenadeSmoke("GRENADE_SMOKE", 4);
-	public static Item PIPE_BOMB = new GrenadePipeBomb("PIPE_BOMB", 1);
-	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 1);
-	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 1);
+	public static Item GRENADE_CONCUSSION = new GrenadeInactive("GRENADE_CONCUSSION");
+	public static Item GRENADE_FLASHBANG = new GrenadeInactive("GRENADE_FLASHBANG");
+	public static Item GRENADE_SMOKE = new GrenadeInactive("GRENADE_SMOKE");
+	public static Item PIPE_BOMB = new GrenadeInactive("PIPE_BOMB");
+	public static Item GRENADE_CONCUSSION_ACTIVE = new GrenadeActive("GRENADE_CONCUSSION_ACTIVE");
+	public static Item GRENADE_FLASHBANG_ACTIVE = new GrenadeActive("GRENADE_FLASHBANG_ACTIVE");
+	public static Item GRENADE_SMOKE_ACTIVE = new GrenadeActive("GRENADE_SMOKE_ACTIVE");
+	public static Item PIPE_BOMB_ACTIVE = new GrenadeActive("PIPE_BOMB_ACTIVE");
+	
+	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 64);
+	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 64);
 		
 		
 	// Returns a list. Each Item Class should add the item(s) to this list.

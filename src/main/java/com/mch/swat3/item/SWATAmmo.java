@@ -11,5 +11,7 @@ public class SWATAmmo extends SWATItem{
 		this.setCreativeTab(SWATCreativeTabs.SWATWeapons);
 		this.maxAmmo = maxAmmo;
 	}
+	
+	
 
 }
