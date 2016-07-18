@@ -262,5 +262,13 @@
             "translation": [ 0, 2, 0],
             "scale": [ 0.46, 0.46, 0.46 ]
         }
-    }
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "aiming": 1
+            },
+            "model": "swat3:item/minigun_aiming"
+        }
+    ]
 }
