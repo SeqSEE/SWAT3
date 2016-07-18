@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
+    "parent": "swat3:item/glock",
     "textures": {
-        "layer0": "swat3:items/glock_active"
+        "layer0": "items/glock"
     }
 }

@@ -1,6 +1,28 @@
 {
-    "parent": "item/generated",
+    "parent": "swat3:item/gun",
     "textures": {
         "layer0": "swat3:items/nightstick"
+    },
+	"display": {
+        "thirdperson_righthand": {
+            "rotation": [ 0, 270, 50 ],
+            "translation": [ 0, 5, 1.2 ],
+            "scale": [ 1.2, 1.2, 1.2 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ 0, -270, -50 ],
+            "translation": [ 0, 5, 1.2 ],
+            "scale": [ 1.2, 1.2, 1.2 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 25, 95, 0 ],
+            "translation": [ 0, 2, 0],
+            "scale": [ 0.8, 0.8, 0.8 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 25, -85, 0 ],
+            "translation": [ 0, 2, 0],
+            "scale": [ 0.8, 0.8, 0.8 ]
+        }
     }
 }

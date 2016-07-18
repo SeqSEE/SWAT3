@@ -1,5 +1,5 @@
 {
-    "parent": "item/generated",
+    "parent": "swat3:item/mp_5",
     "textures": {
         "layer0": "swat3:items/mp_5_active"
     }

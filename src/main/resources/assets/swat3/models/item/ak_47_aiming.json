@@ -1,28 +1,18 @@
 {
-    "parent": "item/handheld",
+    "parent": "swat3:item/ak_47",
     "textures": {
         "layer0": "swat3:items/ak_47"
     },
-		"display": {
-        "thirdperson_righthand": {
-            "rotation": [ 0, 100, 0 ],
-            "translation": [ 2, -3, 2 ],
-            "scale": [ 0.9, 0.9, 0.9 ]
-        },
-        "thirdperson_lefthand": {
-            "rotation": [ 0, 100, 0 ],
-            "translation": [ 2, -3, 2 ],
-            "scale": [ 0.9, 0.9, 0.9 ]
-        },
+	"display": {
         "firstperson_righthand": {
-            "rotation": [ 20, 105, -35 ],
-            "translation": [ -2.8, 0.95, -1.5 ],
-            "scale": [ 1.5, 1.5, 0.75 ]
+            "rotation": [ -14, 95, 0 ],
+            "translation": [ 0, 0, 0],
+            "scale": [ 1.2, 1.2, 1.2 ]
         },
         "firstperson_lefthand": {
-            "rotation": [ 0, 0, 0 ],
-            "translation": [ 4, 0, -7 ],
-            "scale": [ 1.5, 1.5, 0.75 ]
+            "rotation": [ -14, -85, 0 ],
+            "translation": [ 0, 1, 0],
+            "scale": [ 1.2, 1.2, 1.2 ]
         }
-	}
+    }
 }

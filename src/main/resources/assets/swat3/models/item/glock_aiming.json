@@ -1,33 +1,6 @@
 {
-    "parent": "item/generated",
+    "parent": "swat3:item/glock",
     "textures": {
         "layer0": "swat3:items/glock"
-    },
-	"display": {
-        "ground": {
-            "rotation": [ 0, 0, 45 ],
-            "translation": [ 0, 0, 0],
-            "scale":[ 0.45, 0.6, 0.7 ]
-        },
-        "thirdperson_righthand": {
-            "rotation": [ -75, 90, 90 ],
-            "translation": [ 0, 4.1, -3.5 ],
-            "scale": [ 0.45, 0.6, 0.7 ]
-        },
-		"thirdperson_lefthand": {
-            "rotation": [ -75, 270, -90 ],
-            "translation": [ 0, 4.1, -3.5 ],
-            "scale": [ 0.45, 0.6, 0.7 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [ 0, 0, 0 ],
-            "translation": [ 0, 0, 0 ],
-            "scale": [ 1, 1, 1 ]
-        },
-		"firstperson_lefthand": {
-            "rotation": [ 0, 0, 0 ],
-            "translation": [ 0, 0, 0 ],
-            "scale": [ 1, 1, 1 ]
-        }
     }
 }

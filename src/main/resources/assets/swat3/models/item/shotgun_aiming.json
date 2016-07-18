@@ -1,0 +1,6 @@
+{
+    "parent": "swat3:item/shotgun",
+    "textures": {
+        "layer0": "swat3:items/shotgun"
+    }
+}

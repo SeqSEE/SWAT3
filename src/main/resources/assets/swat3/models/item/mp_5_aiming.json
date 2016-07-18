@@ -1,33 +1,6 @@
 {
-    "parent": "item/handheld",
+    "parent": "swat3:item/mp_5",
     "textures": {
         "layer0": "swat3:items/mp_5"
-    },
-    "display": {
-        "ground": {
-            "rotation": [ 0, 0, 45 ],
-            "translation": [ 0, 0, 0],
-            "scale":[ 0.45, 0.6, 0.7 ]
-        },
-        "thirdperson_righthand": {
-            "rotation": [ -65, 90, 90 ],
-            "translation": [ 0, 1.95, -0.75 ],
-            "scale": [ 0.45, 0.6, 0.7 ]
-        },
-		"thirdperson_lefthand": {
-            "rotation": [ -65, 270, -90 ],
-            "translation": [ 0, 1.95, -0.75 ],
-            "scale": [ 0.45, 0.6, 0.7 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [ 30, 120, 15 ],
-            "translation": [ -1, 2, 0 ],
-            "scale": [ 0.45, 0.6, 0.7 ]
-        },
-		"firstperson_lefthand": {
-            "rotation": [ 30, -65, -15 ],
-            "translation": [ -1, 2, 0 ],
-            "scale": [ 0.45, 0.6, 0.7 ]
-        }
-    }	
+    }
 }
