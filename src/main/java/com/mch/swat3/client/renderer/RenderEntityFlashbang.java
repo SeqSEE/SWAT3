@@ -2,6 +2,7 @@ package com.mch.swat3.client.renderer;
 
 import com.mch.swat3.entity.EntityFlashbang;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
@@ -17,16 +18,16 @@ public class RenderEntityFlashbang extends Render<EntityFlashbang> {
 	private Item item;
 	private RenderItem itemRenderer;
 
-	public RenderEntityFlashbang(RenderManager renderManager, Item item, RenderItem itemRenderer) {
+	public RenderEntityFlashbang(RenderManager renderManager, Item item) {
 		super(renderManager);
 		this.item = item;
-		this.itemRenderer = itemRenderer;
+		this.itemRenderer = Minecraft.getMinecraft().getRenderItem();
 	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(EntityFlashbang entity) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return item.getRegistryName();
 	}
 	
 	@Override

@@ -29,12 +29,10 @@ public class ClientProxy extends CommonProxy{
 	
 	@Override
 	public void registerEntities(FMLPreInitializationEvent preEvent) {
-		Minecraft minecraft = Minecraft.getMinecraft();
-		RenderManager manager = minecraft.getRenderManager();
-		RenderItem renderer = minecraft.getRenderItem();
+
 		RenderingRegistry.registerEntityRenderingHandler(EntityFlashbang.class, new IRenderFactory<EntityFlashbang>() {
             @Override public Render<EntityFlashbang> createRenderFor (RenderManager manager) {
-                return new RenderEntityFlashbang(manager, SWATItems.GRENADE_FLASHBANG_ACTIVE, renderer);
+                return new RenderEntityFlashbang(manager, SWATItems.GRENADE_FLASHBANG_ACTIVE);
             }
         });
 		
