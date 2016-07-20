@@ -19,8 +19,8 @@ import net.minecraft.world.World;
 
 public class SMG extends GunBase{
 
-	public SMG(String name, int maxStack) {
-		super(name, maxStack);
+	public SMG(String name) {
+		super(name);
 	}
 	
 	@Override

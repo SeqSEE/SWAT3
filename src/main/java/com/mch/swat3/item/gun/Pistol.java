@@ -11,8 +11,8 @@ import net.minecraft.util.SoundCategory;
 
 public class Pistol extends GunBase{
 
-	public Pistol(String name, int maxStack) {
-		super(name, maxStack);
+	public Pistol(String name) {
+		super(name);
 	}
 	
 	@Override

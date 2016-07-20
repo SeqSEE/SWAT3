@@ -6,8 +6,8 @@ import javax.annotation.Nullable;
 
 public class Shotgun extends GunBase{
 
-	public Shotgun(String name, int maxStack) {
-		super(name, maxStack);
+	public Shotgun(String name) {
+		super(name);
 	}
 
 }

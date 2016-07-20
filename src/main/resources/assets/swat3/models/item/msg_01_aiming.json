@@ -1,0 +1,6 @@
+{
+    "parent": "swat3:item/msg_01",
+    "textures": {
+        "layer0": "swat3:items/msg_01_clipped"
+    }
+}

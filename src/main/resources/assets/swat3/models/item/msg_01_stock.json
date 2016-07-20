@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "swat3:items/sniper_empty"
+        "layer0": "swat3:items/msg_01_stock"
     }
 }

@@ -1,0 +1,36 @@
+{
+    "parent": "swat3:item/gun",
+    "textures": {
+        "layer0": "swat3:items/ak_47_clipped"
+    },
+	"display": {
+        "thirdperson_righthand": {
+            "rotation": [ 0, 90, -30 ],
+            "translation": [ 0, 1, -5.6 ],
+            "scale": [ 1.0, 1.0, 1.0 ]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [ 0, -90, 30 ],
+            "translation": [ 0, 1, -5.6 ],
+            "scale": [ 1.0, 1.0, 1.0 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 25, 95, 0 ],
+            "translation": [ 0, 1, 0],
+            "scale": [ 1.2, 1.2, 1.2 ]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ 25, -85, 0 ],
+            "translation": [ 0, 1, 0],
+            "scale": [ 1.2, 1.2, 1.2 ]
+        }
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "aiming": 1
+            },
+            "model": "swat3:item/ak_47_aiming"
+        }
+    ]
+}

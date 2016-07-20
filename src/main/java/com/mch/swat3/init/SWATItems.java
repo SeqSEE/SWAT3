@@ -33,28 +33,29 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class SWATItems {
 
-	
-	
-
 	public static List<Item> items = new ArrayList();
 
-	public static Item MINIGUN = new HeavyMachineGun("MINIGUN", 1);
-	public static Item SNIPER = new Rifle("SNIPER", 1);
-	public static Item SHOTGUN = new Shotgun("SHOTGUN", 1);
-	public static Item AK_47 = new AssualtRifle("AK_47", 1);
-	public static Item MP_5 = new SMG("MP_5", 1);
-	public static Item GLOCK = new Pistol("GLOCK", 1);
-	public static Item BALLISTIC_KNIFE = new SWATProjectile("BALLISTIC_KNIFE", 1);
-	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK", 1);
+	public static Item MINIGUN = new HeavyMachineGun("MINIGUN");
+	public static Item SNIPER = new Rifle("SNIPER");
+	public static Item SHOTGUN = new Shotgun("SHOTGUN");
+	public static Item AK_47 = new AssualtRifle("AK_47");
+	public static Item MP_5 = new SMG("MP_5");
+	public static Item MSG_01 = new SMG("MSG_01");
+	public static Item GLOCK = new Pistol("GLOCK");
+	public static Item BALLISTIC_KNIFE = new SWATProjectile("BALLISTIC_KNIFE");
+	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK");
+	
 	
 	public static Item BULLET = new ItemBullet("BULLET");
+	public static Item BULLET_MEDIUM = new ItemBullet("BULLET_MEDIUM");
 	public static Item BULLET_LONG = new ItemBullet("BULLET_LONG");
 	public static Item SNIPER_CLIP = new SWATAmmo("SNIPER_CLIP", 5, 30);
 	public static Item SHOTGUN_MAGAZINE = new SWATAmmo("SHOTGUN_MAGAZINE", 1, 10);
 	public static Item AK_47_CLIP = new SWATAmmo("AK_47_CLIP", 5, 30);
 	public static Item MP_5_CLIP = new SWATAmmo("MP_5_CLIP", 5, 30);
+	public static Item MSG_01_CLIP = new SWATAmmo("MSG_01_CLIP", 5, 40);
 	public static Item GLOCK_CLIP = new SWATAmmo("GLOCK_CLIP", 5, 15);
-	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 15, 1);
+	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 3, 1);
 		
 	public static Item SNIPER_BACK = new GunParts("SNIPER_BACK", 1);
 	public static Item SNIPER_BARREL = new GunParts("SNIPER_BARREL", 1);
@@ -78,6 +79,10 @@ public class SWATItems {
 	
 	public static Item MP_5_BODY = new GunParts("MP_5_BODY", 1);
 	public static Item MP_5_GRIP = new GunParts("MP_5_GRIP", 1);
+	
+	public static Item MSG_01_BODY = new GunParts("MSG_01_BODY", 1);
+	public static Item MSG_01_GRIP = new GunParts("MSG_01_GRIP", 1);
+	public static Item MSG_01_STOCK = new GunParts("MSG_01_STOCK", 1);
 	
 	public static Item SHOTGUN_BARREL_0 = new GunParts("SHOTGUN_BARREL_0", 1);
 	public static Item SHOTGUN_BARREL_1 = new GunParts("SHOTGUN_BARREL_1", 1);

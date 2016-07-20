@@ -1,29 +1,6 @@
 {
-    "parent": "item/handheld",
+    "parent": "swat3:item/ballistic_knife",
     "textures": {
-        "layer0": "swat3:items/ballistic_knife"
-    },
-    "display": {
-        "thirdperson_righthand": {
-            "rotation": [ 0, 0, -12 ],
-            "translation": [ 4, -2, 1 ],
-            "scale": [ 0.95, 0.95, 0.95 ]
-        },
-        "thirdperson_lefthand": {
-            "rotation": [ 0, 0, 168 ],
-            "translation": [ 4, -3, 1 ],
-            "scale": [ 0.95, 0.95, 0.95 ]
-        },
-        "firstperson_righthand": {
-            "rotation": [-87, -8, 0 ],
-            "translation": [ 0, 2, 2],
-            "scale": [ 0.9, 0.9, 0.3 ]
-        },
-        "firstperson_lefthand": {
-            "rotation": [-87, 172, 0 ],
-            "translation": [ 0, 2, 2],
-            "scale": [ 0.9, 0.9, 0.3 ]
-        }
+        "layer0": "swat3:items/ballistic_knife_empty"
     }
-	
 }

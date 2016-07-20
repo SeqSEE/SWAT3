@@ -1,12 +1,18 @@
 package com.mch.swat3.proxy;
 
 import com.mch.swat3.SWAT3;
+import com.mch.swat3.entity.EntityGrenade;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
 import com.mch.swat3.util.ConfigHandler;
 import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderItem;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
@@ -19,6 +25,11 @@ public class CommonProxy {
 			VersionHandler.check(preEvent);
 		}
 		register(preEvent);
+		registerEntities(preEvent);
+	}
+
+	public void registerEntities(FMLPreInitializationEvent preEvent) {
+		
 	}
 
 	private void register(FMLPreInitializationEvent preEvent) {

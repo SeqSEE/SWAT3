@@ -1,5 +1,5 @@
 {
-    "parent": "swat3:item/gun",
+    "parent": "item/generated",
     "textures": {
         "layer0": "swat3:items/ak_47"
     },

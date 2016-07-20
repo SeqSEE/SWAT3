@@ -1,6 +1,0 @@
-{
-    "parent": "swat3:item/ballistic_knife",
-    "textures": {
-        "layer0": "swat3:items/ballistic_knife_empty"
-    }
-}
