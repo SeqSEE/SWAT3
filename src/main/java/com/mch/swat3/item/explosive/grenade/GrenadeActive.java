@@ -1,19 +1,22 @@
 package com.mch.swat3.item.explosive.grenade;
 
-import com.mch.swat3.entity.EntityGrenade;
+import com.mch.swat3.entity.EntityFlashbang;
 import com.mch.swat3.init.SWATItems;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntitySnowball;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
-
 
 public class GrenadeActive extends GrenadeInactive {
 
@@ -23,6 +26,22 @@ public class GrenadeActive extends GrenadeInactive {
 		this.setMaxDamage(60);
 		
 	}
+	
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
+		--stack.stackSize;
+		world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+
+	        if (!world.isRemote)
+	        {
+	            EntityFlashbang entityflashbang = new EntityFlashbang(world, player);
+	            entityflashbang.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5F, 1.0F);
+	            world.spawnEntityInWorld(entityflashbang);
+	        }
+
+	       
+	        return new ActionResult(EnumActionResult.SUCCESS, stack);
+	    }
 	
 	//This makes it so when damage is caused to the item it does not animate re-equip.
 		@Override
@@ -93,19 +112,7 @@ public class GrenadeActive extends GrenadeInactive {
 		
 	}
 
-	/*
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
-		--stack.stackSize;
-		if (!world.isRemote)
-        {
-            EntityGrenade grenade = new EntityGrenade(world, player);
-            grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, -20.0F, 0.5F, 1.0F);
-            world.spawnEntityInWorld(grenade);
-        }
-		
-        return new ActionResult(EnumActionResult.SUCCESS, stack);
-	}
-	*/
+	
+
 	    
 }

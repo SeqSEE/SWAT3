@@ -1,14 +1,13 @@
 package com.mch.swat3.proxy;
 
-
-
-import com.mch.swat3.entity.EntityGrenade;
+import com.mch.swat3.client.renderer.RenderEntityFlashbang;
+import com.mch.swat3.entity.EntityFlashbang;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.util.VersionHandler;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.RenderItem;
+import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
@@ -27,23 +26,19 @@ public class ClientProxy extends CommonProxy{
 		super.preInit(preEvent);
 	}
 	
-	/*
-	 * @Override
+	
+	@Override
 	public void registerEntities(FMLPreInitializationEvent preEvent) {
 		Minecraft minecraft = Minecraft.getMinecraft();
 		RenderManager manager = minecraft.getRenderManager();
 		RenderItem renderer = minecraft.getRenderItem();
-		RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, new IRenderFactory<EntityGrenade>() 
-		{
-			@Override
-			public RenderSnowball<EntityGrenade> createRenderFor(RenderManager manager) 
-			{
-				return new RenderSnowball<EntityGrenade>(manager, SWATItems.GRENADE_FLASHBANG_ACTIVE, renderer);
-			}
-		});
-	}
-	*/
-	
+		RenderingRegistry.registerEntityRenderingHandler(EntityFlashbang.class, new IRenderFactory<EntityFlashbang>() {
+            @Override public Render<EntityFlashbang> createRenderFor (RenderManager manager) {
+                return new RenderEntityFlashbang(manager, SWATItems.GRENADE_FLASHBANG_ACTIVE, renderer);
+            }
+        });
+		
+	}	
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);

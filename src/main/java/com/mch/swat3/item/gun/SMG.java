@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import com.mch.swat3.entity.EntityBullet;
+
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.item.bullet.ItemBullet;
 

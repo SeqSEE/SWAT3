@@ -1,7 +1,7 @@
 package com.mch.swat3.proxy;
 
 import com.mch.swat3.SWAT3;
-import com.mch.swat3.entity.EntityGrenade;
+
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
 import com.mch.swat3.util.ConfigHandler;

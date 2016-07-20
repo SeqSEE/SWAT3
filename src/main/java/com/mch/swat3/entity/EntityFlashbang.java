@@ -5,9 +5,9 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
-public class EntityGrenade extends EntityThrowable{
+public class EntityFlashbang extends EntityThrowable{
 
-	public EntityGrenade(World worldIn, EntityLivingBase throwerIn) {
+	public EntityFlashbang(World worldIn, EntityLivingBase throwerIn) {
 		super(worldIn, throwerIn);
 		// TODO Auto-generated constructor stub
 	}
