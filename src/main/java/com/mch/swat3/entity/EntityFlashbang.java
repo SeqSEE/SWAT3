@@ -34,8 +34,9 @@ public class EntityFlashbang extends EntityThrowable{
        int second = 0;
        do {
     	   ++x;
-    	   ++second;
+ 
        }while(x <= 20);
+       ++second;
        System.out.println(second);
     }
 

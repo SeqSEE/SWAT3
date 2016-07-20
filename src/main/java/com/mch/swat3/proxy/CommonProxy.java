@@ -1,7 +1,7 @@
 package com.mch.swat3.proxy;
 
 import com.mch.swat3.SWAT3;
-
+import com.mch.swat3.entity.EntityFlashbang;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
 import com.mch.swat3.util.ConfigHandler;
@@ -16,6 +16,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class CommonProxy {
 
@@ -29,7 +30,9 @@ public class CommonProxy {
 	}
 
 	public void registerEntities(FMLPreInitializationEvent preEvent) {
-		
+		int id = 0;
+		EntityRegistry.registerModEntity(EntityFlashbang.class, "flashbang", id++, SWAT3.instance, 64, 2, true);
+
 	}
 
 	private void register(FMLPreInitializationEvent preEvent) {
