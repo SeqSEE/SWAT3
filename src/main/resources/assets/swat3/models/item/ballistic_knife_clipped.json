@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "swat3:items/ballistic_knife"
+        "layer0": "swat3:items/ballistic_knife_clipped"
     },
     "display": {
         "thirdperson_righthand": {

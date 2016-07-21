@@ -1,18 +1,16 @@
 package com.mch.swat3.proxy;
 
 import com.mch.swat3.SWAT3;
+import com.mch.swat3.entity.EntityConcussion;
 import com.mch.swat3.entity.EntityFlashbang;
+import com.mch.swat3.entity.EntityPipebomb;
+import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
 import com.mch.swat3.util.ConfigHandler;
 import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.RenderItem;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
@@ -31,8 +29,10 @@ public class CommonProxy {
 
 	public void registerEntities(FMLPreInitializationEvent preEvent) {
 		int id = 0;
-		EntityRegistry.registerModEntity(EntityFlashbang.class, "flashbang", id++, SWAT3.instance, 64, 2, true);
-
+		EntityRegistry.registerModEntity(EntityConcussion.class, "grenadeConcussion", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntityFlashbang.class, "greandeFlashbang", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntityPipebomb.class, "grenadePipebomb", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntitySmoke.class, "grenadeSmoke", id++, SWAT3.instance, 64, 2, true);
 	}
 
 	private void register(FMLPreInitializationEvent preEvent) {

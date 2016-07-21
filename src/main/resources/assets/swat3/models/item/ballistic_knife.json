@@ -1,5 +1,5 @@
 {
-    "parent": "swat3:item/ballistic_knife",
+    "parent": "item/handheld",
     "textures": {
         "layer0": "swat3:items/ballistic_knife"
     }

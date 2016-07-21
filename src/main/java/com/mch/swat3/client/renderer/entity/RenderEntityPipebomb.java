@@ -1,6 +1,7 @@
-package com.mch.swat3.client.renderer;
+package com.mch.swat3.client.renderer.entity;
 
-import com.mch.swat3.entity.EntityFlashbang;
+import com.mch.swat3.entity.EntityConcussion;
+import com.mch.swat3.entity.EntityPipebomb;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -13,26 +14,23 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEntityFlashbang extends Render<EntityFlashbang> {
-
+public class RenderEntityPipebomb extends Render<EntityPipebomb>{
+	
+	
 	private Item item;
 	private RenderItem itemRenderer;
 
-	public RenderEntityFlashbang(RenderManager renderManager, Item item) {
+
+	public RenderEntityPipebomb(RenderManager renderManager, Item item) {
 		super(renderManager);
 		this.item = item;
 		this.itemRenderer = Minecraft.getMinecraft().getRenderItem();
-	}
 
-	@Override
-	protected ResourceLocation getEntityTexture(EntityFlashbang entity) {
-		
-		return item.getRegistryName();
 	}
 	
+
 	@Override
-	public void doRender(EntityFlashbang entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
+	public void doRender(EntityPipebomb entity, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)x, (float)y, (float)z);
         GlStateManager.enableRescaleNormal();
@@ -60,9 +58,16 @@ public class RenderEntityFlashbang extends Render<EntityFlashbang> {
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
 
-	private ItemStack getStackToRender(EntityFlashbang entity) {
+	private ItemStack getStackToRender(EntityPipebomb entity) {
 		
 		return new ItemStack(this.item);
 	}
 
+
+
+	@Override
+	protected ResourceLocation getEntityTexture(EntityPipebomb entity) {
+		
+		return this.item.getRegistryName();
+	}
 }
