@@ -19,10 +19,31 @@ public class SWATRecipes {
 				new ItemStack(SWATItems.AK_47_CLIP),
 				new ItemStack(SWATItems.AK_47_GRIP),
 				new ItemStack(SWATItems.AK_47_STOCK));
+		/*
+		 * Glock 
+		 * Shapeless recipe
+		 */
 		GameRegistry.addShapelessRecipe(new ItemStack(SWATItems.GLOCK),
 				new ItemStack(SWATItems.GLOCK_CLIP),
 				new ItemStack(SWATItems.GLOCK_GRIP),
 				new ItemStack(SWATItems.GLOCK_SLIDE));
+		/*
+		 * MP-5 
+		 * Shapeless recipe
+		 */
+		GameRegistry.addShapelessRecipe(new ItemStack(SWATItems.MP_5),
+				new ItemStack(SWATItems.MP_5_BODY),
+				new ItemStack(SWATItems.MP_5_CLIP),
+				new ItemStack(SWATItems.MP_5_GRIP));
+		/*
+		 * MSG-01 
+		 * Shapeless recipe
+		 */
+		GameRegistry.addShapelessRecipe(new ItemStack(SWATItems.MSG_01),
+				new ItemStack(SWATItems.MSG_01_BODY),
+				new ItemStack(SWATItems.MSG_01_CLIP),
+				new ItemStack(SWATItems.MSG_01_GRIP),
+				new ItemStack(SWATItems.MSG_01_STOCK));
 	}
 
 }

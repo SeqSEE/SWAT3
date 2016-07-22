@@ -51,38 +51,43 @@ public class SWATItems {
 	public static Item BULLET = new ItemBullet("BULLET");
 	public static Item BULLET_MEDIUM = new ItemBullet("BULLET_MEDIUM");
 	public static Item BULLET_LONG = new ItemBullet("BULLET_LONG");
-	public static Item SNIPER_CLIP = new SWATAmmo("SNIPER_CLIP", 5, 30);
-	public static Item SHOTGUN_MAGAZINE = new SWATAmmo("SHOTGUN_MAGAZINE", 1, 10);
-	public static Item AK_47_CLIP = new SWATAmmo("AK_47_CLIP", 5, 30);
-	public static Item MP_5_CLIP = new SWATAmmo("MP_5_CLIP", 5, 30);
-	public static Item MSG_01_CLIP = new SWATAmmo("MSG_01_CLIP", 5, 40);
-	public static Item GLOCK_CLIP = new SWATAmmo("GLOCK_CLIP", 5, 15);
-	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 3, 1);
+	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 3, SWATAmmo.AmmoType.BALISTIC_KNIFE);
+	
+	
+	
+	
+	
+	
 		
 	public static Item SNIPER_BACK = new GunParts("SNIPER_BACK", 1);
 	public static Item SNIPER_BARREL = new GunParts("SNIPER_BARREL", 1);
 	public static Item SNIPER_BODY = new GunParts("SNIPER_BODY", 1);
+	public static Item SNIPER_CLIP = new GunParts("SNIPER_CLIP", 1);
 	public static Item SNIPER_STOCK = new GunParts("SNIPER_STOCK", 1);
 	public static Item SNIPER_SUPPORT = new GunParts("SNIPER_SUPPORT", 1);
 	public static Item SNIPER_SCOPE = new GunParts("SNIPER_SCOPE", 1);
 		
-	public static Item AK_47_BODY = new GunParts("AK_47_BODY", 1);
-	public static Item AK_47_GRIP = new GunParts("AK_47_GRIP", 1);
-	public static Item AK_47_STOCK = new GunParts("AK_47_STOCK", 1);
 	public static Item AK_47_BARREL = new GunParts("AK_47_BARREL", 1);
 	public static Item AK_47_BARREL_HOUSING = new GunParts("AK_47_BARREL_HOUSING", 1);
-		
+	public static Item AK_47_BODY = new GunParts("AK_47_BODY", 1);
+	public static Item AK_47_CLIP = new GunParts("AK_47_CLIP", 1);
+	public static Item AK_47_GRIP = new GunParts("AK_47_GRIP", 1);
+	public static Item AK_47_STOCK = new GunParts("AK_47_STOCK", 1);
+	
 	public static Item HEALTH_PACK_SMALL = new SWATItemProvision("HEALTH_PACK_SMALL", 10);
 	public static Item HEALTH_PACK_MEDIUM = new SWATItemProvision("HEALTH_PACK_MEDIUM", 5);
 	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1);
 	
+	public static Item GLOCK_CLIP = new GunParts("GLOCK_CLIP", 1);
 	public static Item GLOCK_GRIP = new GunParts("GLOCK_GRIP", 1);
 	public static Item GLOCK_SLIDE = new GunParts("GLOCK_SLIDE", 1);
 	
 	public static Item MP_5_BODY = new GunParts("MP_5_BODY", 1);
+	public static Item MP_5_CLIP = new GunParts("MP_5_CLIP", 1);
 	public static Item MP_5_GRIP = new GunParts("MP_5_GRIP", 1);
 	
 	public static Item MSG_01_BODY = new GunParts("MSG_01_BODY", 1);
+	public static Item MSG_01_CLIP = new GunParts("MSG_01_CLIP", 1);
 	public static Item MSG_01_GRIP = new GunParts("MSG_01_GRIP", 1);
 	public static Item MSG_01_STOCK = new GunParts("MSG_01_STOCK", 1);
 	
@@ -90,6 +95,7 @@ public class SWATItems {
 	public static Item SHOTGUN_BARREL_1 = new GunParts("SHOTGUN_BARREL_1", 1);
 	public static Item SHOTGUN_BODY = new GunParts("SHOTGUN_BODY", 1);
 	public static Item SHOTGUN_GRIP = new GunParts("SHOTGUN_GRIP", 1);
+	public static Item SHOTGUN_MAGAZINE = new GunParts("SHOTGUN_MAGAZINE", 1);
 	
 	public static Item SWAT_GEAR_BOOTS = new SWATItemArmor("SWAT_GEAR_BOOTS", SWATItemArmor.SWAT_GEAR, 1, EntityEquipmentSlot.FEET);
 	public static Item SWAT_GEAR_PANTS = new SWATItemArmor("SWAT_GEAR_PANTS", SWATItemArmor.SWAT_GEAR, 1, EntityEquipmentSlot.LEGS);

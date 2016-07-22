@@ -27,30 +27,25 @@ public class Pistol extends GunBase{
 	@Override
 	 public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
 		boolean swing = false;
-		if (this.cooldown == 0){
-			int x = entity.getPosition().getX();
-			int y = entity.getPosition().getY();
-			int z = entity.getPosition().getZ();
-			if (entity instanceof EntityPlayer){
-				EntityPlayer player = (EntityPlayer)entity;
-				player.getEntityWorld().playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 4 + 0.8F));
-				EntityGunSlug slug = new EntityGunSlug(player.getEntityWorld(), player);
-				slug.setHeadingFromThrower(player, player.rotationPitch, player.rotationYawHead, 0.0F, 2.0F, 1.0F);
-				if (!entity.getEntityWorld().isRemote){
-					entity.getEntityWorld().spawnEntityInWorld(slug);
-					swing = true;
-					this.cooldown = 20;
-				}
-			}	
-		}
+		int x = entity.getPosition().getX();
+		int y = entity.getPosition().getY();
+		int z = entity.getPosition().getZ();
+		if (entity instanceof EntityPlayer){
+			EntityPlayer player = (EntityPlayer)entity;
+			player.getEntityWorld().playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 4 + 0.8F));
+			EntityGunSlug slug = new EntityGunSlug(player.getEntityWorld(), player);
+			slug.setHeadingFromThrower(player, player.rotationPitch, player.rotationYawHead, 0.0F, 2.5F, 1.0F);
+			if (!entity.getEntityWorld().isRemote){
+				entity.getEntityWorld().spawnEntityInWorld(slug);
+				swing = true;
+			}
+		}	
 		return swing;
 	}
 
-	
+	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected){
-		while(this.cooldown > 0){
-			--this.cooldown;
-		}
+		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
     }
 	
 	@Override

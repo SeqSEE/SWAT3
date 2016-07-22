@@ -49,11 +49,12 @@ item.shotgun_body.name=Shotgun Body
 
 item.bullet.name=Bullet
 item.bullet_long.name=Long Bullet
-item.mp_5_clip.name=MP 5 Clip
 
+item.mp_5_clip.name=MP 5 Clip
 item.shotgun_magazine.name=Shotgun Magazine
 item.sniper_clip.name=Sniper Clip
 item.ak_47_clip.name=AK-47 Clip
+
 item.swat_gear_cask.name=Swat Gear Cask
 item.swat_gear_vest.name=Swat Gear Vest
 item.swat_gear_pants.name=Swat Gear Pants
@@ -67,3 +68,5 @@ item.sniper_body.name=Sniper Body
 item.sniper_stock.name=Sniper Stock
 item.sniper_support.name=Sniper Support
 item.sniper_scope.name=Sniper Scope
+
+death.attack.Suicide.name=Commited Suicide
