@@ -26,22 +26,8 @@ public class SMG extends GunBase{
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStack, World world, EntityPlayer player, EnumHand hand) {
 		player.setActiveHand(hand);
-		//shoot(world, player);
         return new ActionResult(EnumActionResult.SUCCESS, itemStack);
-	
 	}
-
-	/*
-	private void shoot(World world, EntityPlayer player) {
-		if (!world.isRemote){
-		ItemStack itemstack = new ItemStack(SWATItems.BULLET);
-		ItemBullet itembullet = (ItemBullet) SWATItems.BULLET;
-		EntityBullet entitybullet = (EntityBullet) itembullet.createArrow(world, new ItemStack(itembullet), player);
-		entitybullet.setAim(player, player.rotationPitch, player.rotationYaw, 0.0F, 2.0F * 3.0F, 1.0F);
-		world.spawnEntityInWorld(entitybullet);
-		}
-	}
-	*/
 
 	
 

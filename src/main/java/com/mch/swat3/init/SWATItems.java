@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mch.swat3.item.SWATAmmo;
+import com.mch.swat3.item.SWATItem;
 import com.mch.swat3.item.SWATItemArmor;
 import com.mch.swat3.item.SWATItemProvision;
 import com.mch.swat3.item.SWATMelee;
@@ -27,6 +28,7 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -74,7 +76,7 @@ public class SWATItems {
 	public static Item HEALTH_PACK_MEDIUM = new SWATItemProvision("HEALTH_PACK_MEDIUM", 5);
 	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1);
 	
-	public static Item GLOCK_HANDLE = new GunParts("GLOCK_HANDLE", 1);
+	public static Item GLOCK_GRIP = new GunParts("GLOCK_GRIP", 1);
 	public static Item GLOCK_SLIDE = new GunParts("GLOCK_SLIDE", 1);
 	
 	public static Item MP_5_BODY = new GunParts("MP_5_BODY", 1);
@@ -107,6 +109,8 @@ public class SWATItems {
 	
 	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 64);
 	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 64);
+
+	public static Item SLUG = new SWATItem("SLUG", 1);
 		
 		
 	// Returns a list. Each Item Class should add the item(s) to this list.

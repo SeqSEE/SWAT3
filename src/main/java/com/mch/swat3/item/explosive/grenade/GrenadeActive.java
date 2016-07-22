@@ -1,5 +1,6 @@
 package com.mch.swat3.item.explosive.grenade;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.mch.swat3.entity.EntityConcussion;
@@ -10,6 +11,7 @@ import com.mch.swat3.init.SWATItems;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntitySnowball;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
@@ -21,6 +23,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 public class GrenadeActive extends GrenadeInactive {
@@ -31,10 +34,13 @@ public class GrenadeActive extends GrenadeInactive {
 		this.setMaxDamage(60);
 		
 	}
+	private List<BlockPos> explosionRadius = new ArrayList();
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
-	    if (!world.isRemote) {
+	   
+		EnumActionResult result;
+		if (!world.isRemote) {
 	     	if (stack.getItem() == SWATItems.GRENADE_CONCUSSION_ACTIVE){
 	     		--stack.stackSize;
 	     		world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
@@ -42,29 +48,30 @@ public class GrenadeActive extends GrenadeInactive {
 	        	grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5F, 1.0F);
 		        world.spawnEntityInWorld(grenade);
 	        }
-	        if (stack.getItem() == SWATItems.GRENADE_FLASHBANG_ACTIVE){
+	     	if (stack.getItem() == SWATItems.GRENADE_FLASHBANG_ACTIVE){
 	        	--stack.stackSize;
 	     		world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 	        	EntityFlashbang grenade = new EntityFlashbang(world, player);
 		        grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5F, 1.0F);
 		        world.spawnEntityInWorld(grenade);
 	       	}
-	       	if (stack.getItem() == SWATItems.PIPE_BOMB_ACTIVE){
+	     	if (stack.getItem() == SWATItems.PIPE_BOMB_ACTIVE){
 	       		--stack.stackSize;
-	     		world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+	       		world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 	       		EntityPipebomb grenade = new EntityPipebomb(world, player);
-		        grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5F, 1.0F);
-		        world.spawnEntityInWorld(grenade);
+	       		grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5F, 1.0F);
+	       		world.spawnEntityInWorld(grenade);
 	       	}
-	       	if (stack.getItem() == SWATItems.GRENADE_SMOKE_ACTIVE){
+	     	if (stack.getItem() == SWATItems.GRENADE_SMOKE_ACTIVE){
 	       		--stack.stackSize;
-	     		world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
-	       		EntitySmoke grenade = new EntitySmoke(world, player);
-		        grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5F, 1.0F);
-		        world.spawnEntityInWorld(grenade);
+	        	world.playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_SPLASH_POTION_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+	        	EntitySmoke grenade = new EntitySmoke(world, player);
+	        	grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 0.5F, 1.01F);
+	        	world.spawnEntityInWorld(grenade);
 	       	}
+
 	    }
- 
+
 	    return new ActionResult(EnumActionResult.SUCCESS, stack);
 	}
 	
@@ -99,22 +106,23 @@ public class GrenadeActive extends GrenadeInactive {
 		if (stack.getItem() == SWATItems.GRENADE_CONCUSSION_ACTIVE){
 			player.replaceItemInInventory(slot, null);
 			explosionSize = 2.0F;
-			world.createExplosion(null, x, y, z, explosionSize, true).doExplosionB(true);
+			
 		}
 		if (stack.getItem() == SWATItems.GRENADE_FLASHBANG_ACTIVE){
 			player.replaceItemInInventory(slot, null);
-			explosionSize = 0.35F;
-			List<EntityPlayer> playersAffected = null;
-			List<BlockPos> pos = null;
-			pos = world.createExplosion(null, x, y, z, explosionSize, true).getAffectedBlockPositions();
-			for (BlockPos bpos : pos){
-				AxisAlignedBB aabb = new AxisAlignedBB(bpos);
-				playersAffected = world.getEntitiesWithinAABB(EntityPlayer.class, aabb);
-			}
-			for (EntityPlayer affectedPlayer : playersAffected){
-				affectedPlayer.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 30, 4, false, false));
-			}
-						
+			explosionSize = 0.25F;
+			Explosion explosion = new Explosion(world, (Entity)null, x, y, z, explosionSize, false, true);
+			for (BlockPos pos : explosion.getAffectedBlockPositions()){
+				AxisAlignedBB bb = new AxisAlignedBB(pos);
+				if (world.getEntitiesWithinAABB(EntityPlayer.class, bb) != null){
+					for (EntityPlayer entity: world.getEntitiesWithinAABB(EntityPlayer.class, bb)){
+						entity.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 120, 5));
+					}
+				}
+			}	
+			
+			
+			
 		}
 		if (stack.getItem() == SWATItems.GRENADE_SMOKE_ACTIVE){
 			smoke(world, x, y, z);

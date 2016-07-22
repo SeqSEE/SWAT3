@@ -4,20 +4,29 @@ itemGroup.swatprovisions=SWAT³ Provisions
 itemGroup.swatparts=SWAT³ Parts
 
 
+item.ak_47.name=AK-47
+item.glock.name=Glock
+item.mp_5.name=MP 5
+item.shotgun.name=Shotgun
+item.sniper.name=Sniper
+item.minigun.name=Minigun
+item.msg_01.name=MSG-01
+item.ballistic_knife.name=Ballistic Knife
+
 item.ak_47_stock.name=AK-47 Stock
 item.ak_47_body.name=AK-47 Body
 item.ak_47_grip.name=AK-47 Grip
 item.ak_47_barrel_housing.name=AK-47 Barrel Housing
 item.ak_47_barrel.name=AK-47 Barrel
-item.ak_47.name=AK-47
+
 item.ballistic_knife_blade.name=Ballistic Knife Blade
 item.ballistic_knife_empty.name=Ballistic Knife Empty
-item.ballistic_knife.name=Ballistic Knife
+
 item.bulletproof_vest.name=Bulletproof Vest
 item.glock_clip.name=Glock Clip
-item.glock_handle.name=Glock Handle
+item.glock_grip.name=Glock Grip
 item.glock_slide.name=Glock Slide
-item.glock.name=Glock
+
 item.iron_pipe_cap.name=Iron Pipe Cap
 item.iron_pipe.name=Iron Pipe
 item.grenade_concussion.name=Concussion Grenade
@@ -28,7 +37,7 @@ item.grenade_concussion_active.name=Concussion Grenade
 item.grenade_smoke_active.name=Smoke Grenade
 item.grenade_flashbang_active.name=Flashbang
 item.pipe_bomb.name_active=Pipe Bomb
-item.mp_5.name=MP 5
+
 item.nightstick.name=NightStick
 item.mp_5_body.name=MP 5 Body
 item.mp_5_grip.name=MP 5 Grip
@@ -36,12 +45,12 @@ item.shotgun_barrel_0.name=Shotgun Barrel Top
 item.shotgun_barrel_1.name=Shotgun Barrel Bottom
 item.shotgun_grip.name=Shotgun Grip
 item.shotgun_body.name=Shotgun Body
-item.shotgun.name=Shotgun
-item.sniper.name=Sniper
+
+
 item.bullet.name=Bullet
 item.bullet_long.name=Long Bullet
 item.mp_5_clip.name=MP 5 Clip
-item.minigun.name=Minigun
+
 item.shotgun_magazine.name=Shotgun Magazine
 item.sniper_clip.name=Sniper Clip
 item.ak_47_clip.name=AK-47 Clip

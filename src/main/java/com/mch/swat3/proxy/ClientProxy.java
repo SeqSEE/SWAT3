@@ -2,10 +2,12 @@ package com.mch.swat3.proxy;
 
 import com.mch.swat3.client.renderer.entity.RenderEntityConcussion;
 import com.mch.swat3.client.renderer.entity.RenderEntityFlashbang;
+import com.mch.swat3.client.renderer.entity.RenderEntityGunSlug;
 import com.mch.swat3.client.renderer.entity.RenderEntityPipebomb;
 import com.mch.swat3.client.renderer.entity.RenderEntitySmoke;
 import com.mch.swat3.entity.EntityConcussion;
 import com.mch.swat3.entity.EntityFlashbang;
+import com.mch.swat3.entity.EntityGunSlug;
 import com.mch.swat3.entity.EntityPipebomb;
 import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.init.SWATItems;
@@ -50,6 +52,11 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntitySmoke.class, new IRenderFactory<EntitySmoke>() {
             @Override public RenderEntitySmoke createRenderFor (RenderManager manager) {
                 return new RenderEntitySmoke(manager, SWATItems.GRENADE_SMOKE_ACTIVE);
+            }
+        });
+		RenderingRegistry.registerEntityRenderingHandler(EntityGunSlug.class, new IRenderFactory<EntityGunSlug>() {
+            @Override public RenderEntityGunSlug createRenderFor (RenderManager manager) {
+                return new RenderEntityGunSlug(manager, SWATItems.SLUG);
             }
         });
 		

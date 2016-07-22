@@ -3,6 +3,7 @@ package com.mch.swat3.proxy;
 import com.mch.swat3.SWAT3;
 import com.mch.swat3.entity.EntityConcussion;
 import com.mch.swat3.entity.EntityFlashbang;
+import com.mch.swat3.entity.EntityGunSlug;
 import com.mch.swat3.entity.EntityPipebomb;
 import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.init.SWATItems;
@@ -33,6 +34,8 @@ public class CommonProxy {
 		EntityRegistry.registerModEntity(EntityFlashbang.class, "greandeFlashbang", id++, SWAT3.instance, 64, 2, true);
 		EntityRegistry.registerModEntity(EntityPipebomb.class, "grenadePipebomb", id++, SWAT3.instance, 64, 2, true);
 		EntityRegistry.registerModEntity(EntitySmoke.class, "grenadeSmoke", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntityGunSlug.class, "gunSlug", id++, SWAT3.instance, 64, 2, true);
+	
 	}
 
 	private void register(FMLPreInitializationEvent preEvent) {
