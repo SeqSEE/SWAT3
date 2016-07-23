@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mch.swat3.item.*;
+import com.mch.swat3.item.SWATAmmo.AmmoType;
+import com.mch.swat3.item.SWATItemProvision.PackType;
 import com.mch.swat3.item.explosive.*;
 import com.mch.swat3.item.explosive.grenade.*;
 import com.mch.swat3.item.gun.*;
@@ -44,7 +46,7 @@ public class SWATItems {
 	//public static Item BULLET = new SWATAmmo("BULLET", 64);
 	//public static Item BULLET_MEDIUM = new SWATAmmo("BULLET_MEDIUM", 64, SWATAmmo.AmmoType.LMG);
 	//public static Item BULLET_LONG = new SWATAmmo("BULLET_LONG", 64);
-	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 3, SWATAmmo.AmmoType.BALISTIC_KNIFE);
+	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 3, AmmoType.BALISTIC_KNIFE);
 	
 	//Sniper Parts		
 	public static Item SNIPER_BACK = new GunParts("SNIPER_BACK", 1);
@@ -87,9 +89,9 @@ public class SWATItems {
 	public static Item SHOTGUN_MAGAZINE = new GunParts("SHOTGUN_MAGAZINE", 1);
 		
 	//Provisions
-	public static Item HEALTH_PACK_SMALL = new SWATItemProvision("HEALTH_PACK_SMALL", 10);
-	public static Item HEALTH_PACK_MEDIUM = new SWATItemProvision("HEALTH_PACK_MEDIUM", 5);
-	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1);
+	public static Item HEALTH_PACK_SMALL = new SWATItemProvision("HEALTH_PACK_SMALL", 10, PackType.SMALL);
+	public static Item HEALTH_PACK_MEDIUM = new SWATItemProvision("HEALTH_PACK_MEDIUM", 5, PackType.MEDIUM);
+	public static Item HEALTH_PACK_LARGE = new SWATItemProvision("HEALTH_PACK_LARGE", 1, PackType.LARGE);
 	
 	//Shields and Armor
 	public static Item RIOT_SHIELD = new SWATShield("RIOT_SHIELD");
