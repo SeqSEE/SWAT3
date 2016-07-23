@@ -112,10 +112,11 @@ public class SWATItems {
 	//Misc Parts
 	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 64);
 	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 64);
-
+	public static Item STEEL = new SWATItem("STEEL", 64);
 	public static Item SLUG = new SWATItem("SLUG", 1);
 
-	// Returns a list. Each Item Class should add the item(s) to this list when it was initialized.
+
+		
 	public static List<Item> itemList() {
 		return items;
 	}
