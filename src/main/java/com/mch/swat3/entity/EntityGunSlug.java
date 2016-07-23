@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -23,6 +24,8 @@ import net.minecraft.world.World;
 
 public class EntityGunSlug extends EntityThrowable{
 
+	
+	private ResourceLocation SLUG_TEX_PATH = new ResourceLocation("textures/items/gun_slug");
 	private EntityLivingBase shootingEntity;
 	private int ticksInGround;
 	private int xTile;
