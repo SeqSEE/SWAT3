@@ -44,6 +44,30 @@ public class SWATRecipes {
 				new ItemStack(SWATItems.MSG_01_CLIP),
 				new ItemStack(SWATItems.MSG_01_GRIP),
 				new ItemStack(SWATItems.MSG_01_STOCK));
+		/*
+		 * Sniper
+		 * Shapeless recipe
+		 */
+		GameRegistry.addShapelessRecipe(new ItemStack(SWATItems.SNIPER),
+				new ItemStack(SWATItems.SNIPER_BACK),
+				new ItemStack(SWATItems.SNIPER_BARREL),
+				new ItemStack(SWATItems.SNIPER_BODY),
+				new ItemStack(SWATItems.SNIPER_CLIP),
+				new ItemStack(SWATItems.SNIPER_SCOPE),
+				new ItemStack(SWATItems.SNIPER_STOCK),
+				new ItemStack(SWATItems.SNIPER_SUPPORT));
+		/*
+		 * Shotgun
+		 * Shapeless recipe
+		 */
+		GameRegistry.addShapelessRecipe(new ItemStack(SWATItems.SHOTGUN),
+				new ItemStack(SWATItems.SHOTGUN_BARREL_0),
+				new ItemStack(SWATItems.SHOTGUN_BARREL_1),
+				new ItemStack(SWATItems.SHOTGUN_BODY),
+				new ItemStack(SWATItems.SHOTGUN_GRIP),
+				new ItemStack(SWATItems.SHOTGUN_MAGAZINE));
+		
+		
 	}
 
 }
