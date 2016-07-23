@@ -12,6 +12,7 @@ import com.mch.swat3.util.ConfigHandler;
 import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
@@ -41,6 +42,7 @@ public class CommonProxy {
 	private void register(FMLPreInitializationEvent preEvent) {
 			SWATItems.register(preEvent);
 			SWATRecipes.registerRecipes(preEvent);
+			MinecraftForge.EVENT_BUS.register(new SWAT3());
 	}
 
 	public void init(FMLInitializationEvent event) {

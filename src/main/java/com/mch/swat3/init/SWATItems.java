@@ -117,7 +117,7 @@ public class SWATItems {
 	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 64);
 
 	public static Item SLUG = new SWATItem("SLUG", 1);
-		
+	public static Item STEEL = new SWATItem("STEEL", 64);
 		
 	// Returns a list. Each Item Class should add the item(s) to this list.
 	public static List<Item> itemList() {
