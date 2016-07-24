@@ -35,17 +35,19 @@ public class EntityGunSlug extends EntityThrowable{
 
 	public EntityGunSlug(World worldIn) {
 		super(worldIn);
-		this.setSize(0.05F, 0.05F);
+		this.setSize(0.1F, 0.1F);
 	}
 
 
     public EntityGunSlug(World worldIn, EntityLivingBase shooter) {
         this(worldIn, shooter.posX, shooter.posY + (double)shooter.getEyeHeight() - 0.10000000149011612D, shooter.posZ);
         this.shootingEntity = shooter;
+        this.setSize(0.1F, 0.1F);
     }
 
 	public EntityGunSlug(World worldIn, double x, double y, double z) {
         this(worldIn);
+        this.setSize(0.1F, 0.1F);
         this.setPosition(x, y, z);
     }
 
@@ -58,10 +60,10 @@ public class EntityGunSlug extends EntityThrowable{
 	 
 	@Override
 	protected void onImpact(RayTraceResult result) {
-		 if (result.entityHit != null) {
+		 if (result.entityHit != null && result.entityHit != this.shootingEntity) {
 			 		result.entityHit.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) this.shootingEntity), 6.0F);
-			 		for (int j = this.rand.nextInt(4); j < 8; ++j) {
-			            this.worldObj.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D, new int[0]);
+			 		for (int j = 0; j < 4; ++j) {
+			            this.worldObj.spawnParticle(EnumParticleTypes.REDSTONE, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
 			        }
 		 }
 		 if (!this.worldObj.isRemote) {

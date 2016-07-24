@@ -8,8 +8,8 @@ import com.mch.swat3.item.SWATAmmo.AmmoType;
 import com.mch.swat3.item.SWATItemProvision.PackType;
 import com.mch.swat3.item.explosive.*;
 import com.mch.swat3.item.explosive.grenade.*;
+import com.mch.swat3.item.explosive.grenade.GrenadeActive.GrenadeType;
 import com.mch.swat3.item.gun.*;
-
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
@@ -33,19 +33,18 @@ public class SWATItems {
 	public static Item MINIGUN = new HeavyMachineGun("MINIGUN");
 	public static Item SNIPER = new Rifle("SNIPER");
 	public static Item SHOTGUN = new Shotgun("SHOTGUN");
-	public static Item AK_47 = new AssualtRifle("AK_47");
+	public static Item AK_47 = new AssualtRifle("AK_47", AssualtRifle.GunType.AK_47, 30);
 	public static Item MP_5 = new SMG("MP_5");
 	public static Item MSG_01 = new SMG("MSG_01");
 	public static Item GLOCK = new Pistol("GLOCK");
-	public static Item BALLISTIC_KNIFE = new SWATProjectile("BALLISTIC_KNIFE");
+	public static Item BALLISTIC_KNIFE = new GunBase("BALLISTIC_KNIFE");
 	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK");
 	
-	//Bullets and Ammo
-	//Need to fix this so it's each gun type see: SWATAmmo.AmmoType
-	// SNIPER, SHOTGUN, HMG, LMG, SMG, PISTOL, BALISTIC_KNIFE
-	//public static Item BULLET = new SWATAmmo("BULLET", 64);
-	//public static Item BULLET_MEDIUM = new SWATAmmo("BULLET_MEDIUM", 64, SWATAmmo.AmmoType.LMG);
-	//public static Item BULLET_LONG = new SWATAmmo("BULLET_LONG", 64);
+	/*Bullets and Ammo
+	 -  Will be used to represent each bullet type.  -
+	 * Need to fix this so it's each gun type see: SWATAmmo.AmmoType
+	 * SNIPER, SHOTGUN, HMG, LMG, PISTOL, BALISTIC_KNIFE
+	 */
 	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 3, AmmoType.BALISTIC_KNIFE);
 	
 	//Sniper Parts		
@@ -102,23 +101,26 @@ public class SWATItems {
 	public static Item BULLETPROOF_VEST = new SWATItemArmor("BULLETPROOF_VEST", SWATItemArmor.BULLETPROOF_VEST, 1, EntityEquipmentSlot.CHEST);
 	
 	//Grenades
-	public static Item GRENADE_CONCUSSION = new GrenadeInactive("GRENADE_CONCUSSION");
-	public static Item GRENADE_FLASHBANG = new GrenadeInactive("GRENADE_FLASHBANG");
-	public static Item GRENADE_SMOKE = new GrenadeInactive("GRENADE_SMOKE");
-	public static Item PIPE_BOMB = new GrenadeInactive("PIPE_BOMB");
-	public static Item GRENADE_CONCUSSION_ACTIVE = new GrenadeActive("GRENADE_CONCUSSION_ACTIVE");
-	public static Item GRENADE_FLASHBANG_ACTIVE = new GrenadeActive("GRENADE_FLASHBANG_ACTIVE");
-	public static Item GRENADE_SMOKE_ACTIVE = new GrenadeActive("GRENADE_SMOKE_ACTIVE");
-	public static Item PIPE_BOMB_ACTIVE = new GrenadeActive("PIPE_BOMB_ACTIVE");
+	public static Item GRENADE_CONCUSSION = new GrenadeInactive("GRENADE_CONCUSSION", GrenadeType.CONCUSSION);
+	public static Item GRENADE_FLASHBANG = new GrenadeInactive("GRENADE_FLASHBANG", GrenadeType.FLASHBANG);
+	public static Item GRENADE_SMOKE = new GrenadeInactive("GRENADE_SMOKE", GrenadeType.SMOKE);
+	public static Item PIPE_BOMB = new GrenadeInactive("PIPE_BOMB", GrenadeType.PIPEBOMB);
+	public static Item GRENADE_CONCUSSION_ACTIVE = new GrenadeActive("GRENADE_CONCUSSION_ACTIVE", GrenadeType.CONCUSSION);
+	public static Item GRENADE_FLASHBANG_ACTIVE = new GrenadeActive("GRENADE_FLASHBANG_ACTIVE", GrenadeType.FLASHBANG);
+	public static Item GRENADE_SMOKE_ACTIVE = new GrenadeActive("GRENADE_SMOKE_ACTIVE", GrenadeType.SMOKE);
+	public static Item PIPE_BOMB_ACTIVE = new GrenadeActive("PIPE_BOMB_ACTIVE", GrenadeType.PIPEBOMB);
 	
 	//Misc Parts
+	public static Item TRIGGER = new GunParts("TRIGGER", 64);
+	public static Item SPRING = new SWATItem("SPRING", 64);
 	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 64);
 	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 64);
 	public static Item STEEL = new SWATItem("STEEL", 64);
-	public static Item SLUG = new SWATItem("SLUG", 1);
-
+	// This is the entity texture and the part for the bullets.
+	public static Item SLUG = new GunParts("SLUG", 64);
 
 		
+	//Returns the items as a list of Item
 	public static List<Item> itemList() {
 		return items;
 	}
@@ -137,6 +139,4 @@ public class SWATItems {
     	renderItem.getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName().toString(), "inventory"));
 		}
 	}
-	
-	
 }

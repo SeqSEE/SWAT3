@@ -6,7 +6,7 @@ public class SWATAmmo extends SWATItem{
 	
 	//Used to determine if gun can take ammo
 	public enum AmmoType {
-		SNIPER, SHOTGUN, HMG, LMG, SMG, PISTOL, BALISTIC_KNIFE
+		SNIPER, SHOTGUN, HMG, LMG, PISTOL, BALISTIC_KNIFE
 	}
 	private AmmoType ammoType;
 	public SWATAmmo(String name, int maxStack, AmmoType type) {
