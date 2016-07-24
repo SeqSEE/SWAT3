@@ -12,6 +12,7 @@ public class SWATItem extends Item{
 		this.setUnlocalizedName(name.toLowerCase());
 		this.setMaxStackSize(maxStack);
 		addToItems(this);
+		this.setCreativeTab(SWATCreativeTabs.SWATParts);
 	}
 
 	private void addToItems(Item item) {

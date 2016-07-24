@@ -49,6 +49,12 @@ item.shotgun_body.name=Shotgun Body
 
 item.bullet.name=Bullet
 item.bullet_long.name=Long Bullet
+item.shotgun_bullet.name=Shotgun Bullet
+item.lmg_bullet.name=LMG Bullet
+item.sniper_bullet.name=Sniper Bullet
+item.hmg_bullet.name=HMG Bullet
+item.pistol_bullet.name=Pistol Bullet
+
 item.slug.name=Slug
 
 item.mp_5_clip.name=MP 5 Clip
@@ -60,18 +66,27 @@ item.swat_gear_cask.name=Swat Gear Cask
 item.swat_gear_vest.name=Swat Gear Vest
 item.swat_gear_pants.name=Swat Gear Pants
 item.swat_gear_boots.name=Swat Gear Boots
+
+
 item.health_pack_small.name=Small Health Pack 
 item.health_pack_medium.name=Medium Health Pack 
 item.health_pack_large.name=Large Health Pack 
+
 item.sniper_back.name=Sniper Back
 item.sniper_barrel.name=Sniper Barrel
 item.sniper_body.name=Sniper Body
 item.sniper_stock.name=Sniper Stock
 item.sniper_support.name=Sniper Support
 item.sniper_scope.name=Sniper Scope
+
 item.msg_01_clip.name=MSG 01 Clip
 item.msg_01_body.name=MSG 01 Body
 item.msg_01_grip.name=MSG 01 Grip
 item.msg_01_stock.name=MSG 01 Stock
+
+item.steel.name=Steel
+item.spring.name=Spring
+item.trigger.name=Trigger
+
 
 death.attack.Suicide.name=Commited Suicide

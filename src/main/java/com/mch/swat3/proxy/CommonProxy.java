@@ -5,11 +5,12 @@ import com.mch.swat3.entity.EntityGrenade;
 import com.mch.swat3.entity.EntityGunSlug;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
-import com.mch.swat3.item.explosive.grenade.GrenadeActive.GrenadeType;
+import com.mch.swat3.stats.SWATAchievement;
 import com.mch.swat3.util.ConfigHandler;
 import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
 
+import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -45,6 +46,7 @@ public class CommonProxy {
 
 	public void init(FMLInitializationEvent event) {
 		registerRender(event);
+		AchievementPage.registerAchievementPage(SWATAchievement.SWATAchievePage);
 	}
 	
 	public void registerRender(FMLInitializationEvent event) {
