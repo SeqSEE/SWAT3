@@ -11,7 +11,7 @@ public class SWATAchievement {
 	
 	public static final Achievement TheSWATExperience = new Achievement(
 			"TheSWATExperience", "theswatexperience", 0, 1,
-			new ItemStack(SWATItems.STEEL, 1),
+			new ItemStack(SWATItems.STEEL_INGOT, 1),
 			AchievementList.OPEN_INVENTORY).registerStat();
 
 	

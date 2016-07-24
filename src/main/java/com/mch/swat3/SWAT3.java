@@ -52,7 +52,7 @@ public class SWAT3 {
 	public void onCraft(PlayerEvent.ItemCraftedEvent event) {
 
 		Item item = event.crafting.getItem();
-		if (item == SWATItems.STEEL) {
+		if (item == SWATItems.STEEL_INGOT) {
 
 			event.player.addStat(SWATAchievement.TheSWATExperience, 1);
 		}

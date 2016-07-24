@@ -8,10 +8,12 @@ import com.mch.swat3.entity.EntityPipebomb;
 import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
+import com.mch.swat3.stats.SWATAchievement;
 import com.mch.swat3.util.ConfigHandler;
 import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
 
+import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -47,6 +49,7 @@ public class CommonProxy {
 
 	public void init(FMLInitializationEvent event) {
 		registerRender(event);
+		AchievementPage.registerAchievementPage(SWATAchievement.SWATAchievePage);
 	}
 	
 	public void registerRender(FMLInitializationEvent event) {
