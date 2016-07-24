@@ -40,11 +40,12 @@ public class SWATItems {
 	public static Item BALLISTIC_KNIFE = new GunBase("BALLISTIC_KNIFE");
 	public static Item NIGHTSTICK = new SWATMelee("NIGHTSTICK");
 	
-	/*Bullets and Ammo
-	 -  Will be used to represent each bullet type.  -
-	 * Need to fix this so it's each gun type see: SWATAmmo.AmmoType
-	 * SNIPER, SHOTGUN, HMG, LMG, PISTOL, BALISTIC_KNIFE
-	 */
+	//Bullets and Ammo
+	public static Item SNIPER_BULLET = new SWATAmmo("SNIPER_BULLET", 3 , AmmoType.PISTOL);
+	public static Item SHOTGUN_BULLET = new SWATAmmo("SHOTGUN_BULLET", 24 , AmmoType.PISTOL);
+	public static Item HMG_BULLET = new SWATAmmo("HMG_BULLET", 64 , AmmoType.PISTOL);
+	public static Item LMG_BULLET = new SWATAmmo("LMG_BULLET", 60 , AmmoType.PISTOL);
+	public static Item PISTOL_BULLET = new SWATAmmo("PISTOL_BULLET", 60 , AmmoType.PISTOL);
 	public static Item BALLISTIC_KNIFE_BLADE = new SWATAmmo("BALLISTIC_KNIFE_BLADE", 3, AmmoType.BALISTIC_KNIFE);
 	
 	//Sniper Parts		
