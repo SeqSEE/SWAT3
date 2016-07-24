@@ -1,32 +1,19 @@
 package com.mch.swat3.item.explosive.grenade;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Nullable;
-
-
-import com.mch.swat3.entity.EntityGrenade;
-
-import com.mch.swat3.init.SWATItems;
+import com.mch.swat3.entity.EntityConcussion;
+import com.mch.swat3.entity.EntityFlashbang;
+import com.mch.swat3.entity.EntityPipebomb;
+import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.item.SWATItem;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 
@@ -51,19 +38,19 @@ public class GrenadeActive extends SWATItem {
 		EntityThrowable grenade;
 		switch(this.grenadeType){
 		case CONCUSSION:
-			grenade = new EntityGrenade(world, player);
+			grenade = new EntityConcussion(world, player);
 			result = EnumActionResult.SUCCESS;
 			break;
 		case FLASHBANG:
-			grenade = new EntityGrenade(world, player);
+			grenade = new EntityFlashbang(world, player);
 			result = EnumActionResult.SUCCESS;
 			break;
 		case SMOKE:
-			grenade = new EntityGrenade(world, player);
+			grenade = new EntitySmoke(world, player);
 			result = EnumActionResult.SUCCESS;
 			break;
 		case PIPEBOMB:
-			grenade = new EntityGrenade(world, player);
+			grenade = new EntityPipebomb(world, player);
 			result = EnumActionResult.SUCCESS;
 			break;
 		default:

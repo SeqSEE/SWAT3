@@ -1,35 +1,31 @@
 package com.mch.swat3.client.renderer.entity;
 
 
-import com.mch.swat3.entity.EntityGunSlug;
+import com.mch.swat3.entity.EntitySmoke;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderArrow;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderEntityGunSlug extends Render<EntityGunSlug>{
-	
-	
+public class RenderSmoke extends Render<EntitySmoke>{
 	private Item item;
 	private RenderItem itemRenderer;
 
-	public RenderEntityGunSlug(RenderManager renderManager, Item item) {
+	public RenderSmoke(RenderManager renderManager, Item item) {
 		super(renderManager);
 		this.item = item;
 		this.itemRenderer = Minecraft.getMinecraft().getRenderItem();
 	}
 	
 	@Override
-	public void doRender(EntityGunSlug entity, double x, double y, double z, float entityYaw, float partialTicks) {
+	public void doRender(EntitySmoke entity, double x, double y, double z, float entityYaw, float partialTicks) {
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)x, (float)y, (float)z);
         GlStateManager.enableRescaleNormal();
@@ -58,13 +54,13 @@ public class RenderEntityGunSlug extends Render<EntityGunSlug>{
     }
 
 
-	private ItemStack getStackToRender(EntityGunSlug entity) {
+	private ItemStack getStackToRender(EntitySmoke entity) {
 		
 		return new ItemStack(this.item);
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(EntityGunSlug entity) {
+	protected ResourceLocation getEntityTexture(EntitySmoke entity) {
 		return this.item.getRegistryName();
 	}
 }

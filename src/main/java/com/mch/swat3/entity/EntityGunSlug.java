@@ -25,13 +25,7 @@ import net.minecraft.world.World;
 public class EntityGunSlug extends EntityThrowable{
 
 	
-	private ResourceLocation SLUG_TEX_PATH = new ResourceLocation("textures/items/gun_slug");
 	private EntityLivingBase shootingEntity;
-	private int ticksInGround;
-	private int xTile;
-	private int yTile;
-	private int zTile;
-	private Block inTile;
 
 	public EntityGunSlug(World worldIn) {
 		super(worldIn);

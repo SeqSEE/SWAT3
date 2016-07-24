@@ -1,11 +1,13 @@
 package com.mch.swat3.proxy;
 
 import com.mch.swat3.SWAT3;
-import com.mch.swat3.entity.EntityGrenade;
+import com.mch.swat3.entity.EntityConcussion;
+import com.mch.swat3.entity.EntityFlashbang;
 import com.mch.swat3.entity.EntityGunSlug;
+import com.mch.swat3.entity.EntityPipebomb;
+import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
-import com.mch.swat3.item.explosive.grenade.GrenadeActive.GrenadeType;
 import com.mch.swat3.util.ConfigHandler;
 import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
@@ -29,10 +31,10 @@ public class CommonProxy {
 
 	public void registerEntities(FMLPreInitializationEvent preEvent) {
 		int id = 0;
-		EntityRegistry.registerModEntity(EntityGrenade.class, "grenadeConcussion", id++, SWAT3.instance, 64, 2, true);
-		EntityRegistry.registerModEntity(EntityGrenade.class, "greandeFlashbang", id++, SWAT3.instance, 64, 2, true);
-		EntityRegistry.registerModEntity(EntityGrenade.class, "grenadePipebomb", id++, SWAT3.instance, 64, 2, true);
-		EntityRegistry.registerModEntity(EntityGrenade.class, "grenadeSmoke", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntityConcussion.class, "grenadeConcussion", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntityFlashbang.class, "greandeFlashbang", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntityPipebomb.class, "grenadePipebomb", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntitySmoke.class, "grenadeSmoke", id++, SWAT3.instance, 64, 2, true);
 		EntityRegistry.registerModEntity(EntityGunSlug.class, "gunSlug", id++, SWAT3.instance, 64, 2, true);
 	
 	}

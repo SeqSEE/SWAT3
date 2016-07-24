@@ -1,9 +1,15 @@
 package com.mch.swat3.proxy;
 
-import com.mch.swat3.client.renderer.entity.RenderEntityGrenade;
+import com.mch.swat3.client.renderer.entity.RenderConcussion;
 import com.mch.swat3.client.renderer.entity.RenderEntityGunSlug;
-import com.mch.swat3.entity.EntityGrenade;
+import com.mch.swat3.client.renderer.entity.RenderFlashbang;
+import com.mch.swat3.client.renderer.entity.RenderPipebomb;
+import com.mch.swat3.client.renderer.entity.RenderSmoke;
+import com.mch.swat3.entity.EntityConcussion;
+import com.mch.swat3.entity.EntityFlashbang;
 import com.mch.swat3.entity.EntityGunSlug;
+import com.mch.swat3.entity.EntityPipebomb;
+import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.util.VersionHandler;
 
@@ -28,9 +34,24 @@ public class ClientProxy extends CommonProxy{
 	@Override
 	public void registerEntities(FMLPreInitializationEvent preEvent) {
 		super.registerEntities(preEvent);
-		RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, new IRenderFactory<EntityGrenade>() {
-            @Override public RenderEntityGrenade createRenderFor (RenderManager manager) {
-                return new RenderEntityGrenade(manager);
+		RenderingRegistry.registerEntityRenderingHandler(EntityConcussion.class, new IRenderFactory<EntityConcussion>() {
+            @Override public RenderConcussion createRenderFor (RenderManager manager) {
+                return new RenderConcussion(manager, SWATItems.GRENADE_CONCUSSION_ACTIVE);
+            }
+        });
+		RenderingRegistry.registerEntityRenderingHandler(EntityFlashbang.class, new IRenderFactory<EntityFlashbang>() {
+            @Override public RenderFlashbang createRenderFor (RenderManager manager) {
+                return new RenderFlashbang(manager, SWATItems.GRENADE_FLASHBANG_ACTIVE);
+            }
+        });
+		RenderingRegistry.registerEntityRenderingHandler(EntitySmoke.class, new IRenderFactory<EntitySmoke>() {
+            @Override public RenderSmoke createRenderFor (RenderManager manager) {
+                return new RenderSmoke(manager, SWATItems.GRENADE_SMOKE_ACTIVE);
+            }
+        });
+		RenderingRegistry.registerEntityRenderingHandler(EntityPipebomb.class, new IRenderFactory<EntityPipebomb>() {
+            @Override public RenderPipebomb createRenderFor (RenderManager manager) {
+                return new RenderPipebomb(manager, SWATItems.PIPE_BOMB_ACTIVE);
             }
         });
 		RenderingRegistry.registerEntityRenderingHandler(EntityGunSlug.class, new IRenderFactory<EntityGunSlug>() {
