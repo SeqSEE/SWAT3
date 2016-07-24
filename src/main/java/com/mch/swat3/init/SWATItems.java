@@ -116,7 +116,7 @@ public class SWATItems {
 	public static Item SPRING = new SWATItem("SPRING", 64);
 	public static Item IRON_PIPE = new ExplosivePart("IRON_PIPE", 64);
 	public static Item IRON_PIPE_CAP = new ExplosivePart("IRON_PIPE_CAP", 64);
-	public static Item STEEL = new SWATItem("STEEL", 64);
+	public static Item STEEL_INGOT = new SWATItem("STEEL_INGOT", 64);
 	// This is the entity texture and the part for the bullets.
 	public static Item SLUG = new GunParts("SLUG", 64);
 

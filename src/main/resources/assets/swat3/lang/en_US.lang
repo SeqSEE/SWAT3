@@ -84,7 +84,7 @@ item.msg_01_body.name=MSG 01 Body
 item.msg_01_grip.name=MSG 01 Grip
 item.msg_01_stock.name=MSG 01 Stock
 
-item.steel.name=Steel
+item.steel.name=Steel Ingot
 item.spring.name=Spring
 item.trigger.name=Trigger
 
