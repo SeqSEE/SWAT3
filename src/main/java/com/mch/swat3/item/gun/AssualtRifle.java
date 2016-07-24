@@ -56,9 +56,6 @@ public class AssualtRifle extends GunBase{
 	@Override
 	 public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
 		boolean swing = false;
-		int x = entity.getPosition().getX();
-		int y = entity.getPosition().getY();
-		int z = entity.getPosition().getZ();
 		if (entity instanceof EntityPlayer){
 			if (!entity.getEntityWorld().isRemote){
 				for(int i = 0; i < 3; i++ ){
