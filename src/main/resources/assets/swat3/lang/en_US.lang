@@ -33,10 +33,10 @@ item.grenade_concussion.name=Concussion Grenade
 item.grenade_smoke.name=Smoke Grenade
 item.grenade_flashbang.name=Flashbang
 item.pipe_bomb.name=Pipe Bomb
-item.grenade_concussion_active.name=Concussion Grenade
-item.grenade_smoke_active.name=Smoke Grenade
-item.grenade_flashbang_active.name=Flashbang
-item.pipe_bomb.name_active=Pipe Bomb
+item.grenade_concussion_active.name=Active Concussion Grenade
+item.grenade_smoke_active.name=Active Smoke Grenade
+item.grenade_flashbang_active.name=Active Flashbang
+item.pipe_bomb_active.name=Active Pipe Bomb
 
 item.nightstick.name=NightStick
 item.mp_5_body.name=MP 5 Body
@@ -49,6 +49,7 @@ item.shotgun_body.name=Shotgun Body
 
 item.bullet.name=Bullet
 item.bullet_long.name=Long Bullet
+item.slug.name=Slug
 
 item.mp_5_clip.name=MP 5 Clip
 item.shotgun_magazine.name=Shotgun Magazine
@@ -68,5 +69,9 @@ item.sniper_body.name=Sniper Body
 item.sniper_stock.name=Sniper Stock
 item.sniper_support.name=Sniper Support
 item.sniper_scope.name=Sniper Scope
+item.msg_01_clip.name=MSG 01 Clip
+item.msg_01_body.name=MSG 01 Body
+item.msg_01_grip.name=MSG 01 Grip
+item.msg_01_stock.name=MSG 01 Stock
 
 death.attack.Suicide.name=Commited Suicide
