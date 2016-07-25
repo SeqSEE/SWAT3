@@ -1,9 +1,14 @@
 package com.mch.swat3.entity;
 
+import com.mch.swat3.init.SWATItems;
+
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.RayTraceResult;
@@ -17,15 +22,18 @@ public class EntityPipebomb extends EntityThrowable{
 	private int yTile;
 	private int zTile;
 	private Block inTile;
+	private int fuse;
 
 	public EntityPipebomb(World worldIn) {
 		super(worldIn);
 	}
 
 
-    public EntityPipebomb(World worldIn, EntityLivingBase shooter) {
+    public EntityPipebomb(World worldIn, EntityLivingBase shooter, int fuse) {
         this(worldIn, shooter.posX, shooter.posY + (double)shooter.getEyeHeight() - 0.10000000149011612D, shooter.posZ);
         this.shootingEntity = shooter;
+        this.fuse = fuse;
+        this.noClip = false;
  
     }
 
@@ -38,14 +46,42 @@ public class EntityPipebomb extends EntityThrowable{
 	@Override
 	public void onUpdate(){
 		super.onUpdate();
+		int misfire = rand.nextInt(2);
+		if (this.fuse > 0){
+			if (misfire >= 1){
+				--this.fuse;
+			}
+			else{
+				++this.fuse;
+			}
+			--this.fuse;
+		}
+		else{
+			this.detonate();
+		}
 	}
 	 
-	 
+	private void detonate() {
+		if (!this.worldObj.isRemote) {
+			 this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 3.0F, false);
+			 this.setDead(); 
+		}
+	}
+	
+
 	@Override
 	protected void onImpact(RayTraceResult result) {
-		 if (!this.worldObj.isRemote) {
-			 this.setDead();
-		 }
+		if (result.typeOfHit.equals(RayTraceResult.Type.BLOCK)){
+		      this.motionX *= -0.10000000149011612D;
+              this.motionY *= -0.10000000149011612D;
+              this.motionZ *= -0.10000000149011612D;
+              this.rotationYaw += 180.0F;
+              this.prevRotationYaw += 180.0F;
+              this.setVelocity(0.0, 0.0, 0.0);
+		}
 	}
+
+
+
 
 }

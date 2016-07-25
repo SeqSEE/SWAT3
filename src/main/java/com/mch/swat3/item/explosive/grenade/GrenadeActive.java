@@ -36,21 +36,22 @@ public class GrenadeActive extends SWATItem {
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
 		EnumActionResult result;
 		EntityThrowable grenade;
+		int fuse = stack.getMaxDamage() - stack.getItemDamage();
 		switch(this.grenadeType){
 		case CONCUSSION:
-			grenade = new EntityConcussion(world, player);
+			grenade = new EntityConcussion(world, player, fuse);
 			result = EnumActionResult.SUCCESS;
 			break;
 		case FLASHBANG:
-			grenade = new EntityFlashbang(world, player);
+			grenade = new EntityFlashbang(world, player, fuse);
 			result = EnumActionResult.SUCCESS;
 			break;
 		case SMOKE:
-			grenade = new EntitySmoke(world, player);
+			grenade = new EntitySmoke(world, player, fuse);
 			result = EnumActionResult.SUCCESS;
 			break;
 		case PIPEBOMB:
-			grenade = new EntityPipebomb(world, player);
+			grenade = new EntityPipebomb(world, player, fuse);
 			result = EnumActionResult.SUCCESS;
 			break;
 		default:
@@ -115,7 +116,6 @@ public class GrenadeActive extends SWATItem {
 
 	private void detonate(World world, EntityPlayer player, int slot, float explosionSize) {
 		world.createExplosion((Entity)null, player.posX, player.posY, player.posZ, explosionSize, false);
-		world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, player.posX, player.posY, player.posZ, 0.0F, 0.0F, 0.0F);
 		player.replaceItemInInventory(slot, null);
 		
 	}
