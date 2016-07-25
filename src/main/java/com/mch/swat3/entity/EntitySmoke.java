@@ -24,7 +24,7 @@ public class EntitySmoke extends EntityThrowable{
     public EntitySmoke(World worldIn, EntityLivingBase shooter, int fuse) {
         this(worldIn, shooter.posX, shooter.posY + (double)shooter.getEyeHeight() - 0.10000000149011612D, shooter.posZ);
         this.shootingEntity = shooter;
-        this.timer = fuse;
+
  
     }
 
@@ -37,14 +37,15 @@ public class EntitySmoke extends EntityThrowable{
 	@Override
 	public void onUpdate(){
 		super.onUpdate();
+		if (!this.worldObj.isRemote){
 			if (this.timer > 0){
 				--this.timer;
-				for (int i = 0; i < 80; ++i){
+				for (int i = 0; i < 100; ++i){
 					this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5);
 				}
 			}
 			else{
-				if (!this.worldObj.isRemote){
+				
 					this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 0.5F, false);
 					this.setDead();
 				}
