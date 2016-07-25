@@ -62,8 +62,10 @@ public class GrenadeActive extends SWATItem {
 		if (grenade != null && !world.isRemote){
 			--stack.stackSize;
 			grenade.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 0.5F, 1.01F);
-        	world.spawnEntityInWorld(grenade);
-		}
+        	if(!world.isRemote){
+			world.spawnEntityInWorld(grenade);
+		   	}
+        }
 		return new ActionResult(result, stack);
 	}
 	

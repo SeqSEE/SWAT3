@@ -51,15 +51,14 @@ public class EntityConcussion extends EntityThrowable{
 	 
 	@Override
 	protected void onImpact(RayTraceResult result) {
-		if(!this.worldObj.isRemote){
-			List<BlockPos> blocks = this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 4.5F, false).getAffectedBlockPositions();
-			for (BlockPos pos : blocks){
-				List<EntityPlayer> players = this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos));
-				for (EntityPlayer player : players){
-					player.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 20, 1));
-				}
+		List<BlockPos> blocks = this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 4.5F, false).getAffectedBlockPositions();
+		for (BlockPos pos : blocks){
+			List<EntityPlayer> players = this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos));
+			for (EntityPlayer player : players){
+				player.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 20, 1));
 			}
-		
+		}
+		if (!this.worldObj.isRemote){
 			this.setDead();
 		}
 	}
