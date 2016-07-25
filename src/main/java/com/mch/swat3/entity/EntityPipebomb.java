@@ -47,28 +47,16 @@ public class EntityPipebomb extends EntityThrowable{
 	public void onUpdate(){
 		super.onUpdate();
 		if (!this.worldObj.isRemote) {
-			int misfire = rand.nextInt(2);
 			if (this.fuse > 0){
-				if (misfire >= 1){
-					--this.fuse;
-				}
-				else{
-					++this.fuse;
-				}
 				--this.fuse;
 			}
 			else{
-				this.detonate();
+				 this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 3.0F, false);
+				 this.setDead();
 			}
 		}
 	}
 	 
-	private void detonate() {
-			 this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 3.0F, false);
-			 this.setDead(); 
-		}
-	
-
 	@Override
 	protected void onImpact(RayTraceResult result) {
 		if (result.typeOfHit.equals(RayTraceResult.Type.BLOCK)){
