@@ -46,27 +46,27 @@ public class EntityPipebomb extends EntityThrowable{
 	@Override
 	public void onUpdate(){
 		super.onUpdate();
-		int misfire = rand.nextInt(2);
-		if (this.fuse > 0){
-			if (misfire >= 1){
+		if (!this.worldObj.isRemote) {
+			int misfire = rand.nextInt(2);
+			if (this.fuse > 0){
+				if (misfire >= 1){
+					--this.fuse;
+				}
+				else{
+					++this.fuse;
+				}
 				--this.fuse;
 			}
 			else{
-				++this.fuse;
+				this.detonate();
 			}
-			--this.fuse;
-		}
-		else{
-			this.detonate();
 		}
 	}
 	 
 	private void detonate() {
-		if (!this.worldObj.isRemote) {
 			 this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 3.0F, false);
 			 this.setDead(); 
 		}
-	}
 	
 
 	@Override

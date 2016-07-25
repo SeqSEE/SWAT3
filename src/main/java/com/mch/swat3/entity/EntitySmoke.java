@@ -37,15 +37,17 @@ public class EntitySmoke extends EntityThrowable{
 	@Override
 	public void onUpdate(){
 		super.onUpdate();
-		if (this.timer > 0){
-			--this.timer;
-			for (int i = 0; i < 80; ++i){
-				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5);
+		if (!this.worldObj.isRemote){
+			if (this.timer > 0){
+				--this.timer;
+				for (int i = 0; i < 80; ++i){
+					this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5);
+				}
 			}
-		}
-		else{
-			this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 0.5F, false);
-			this.setDead();
+			else{
+				this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 0.5F, false);
+				this.setDead();
+			}
 		}
 	}
 	 
