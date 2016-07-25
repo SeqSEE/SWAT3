@@ -14,7 +14,8 @@ import net.minecraft.world.World;
 public class EntitySmoke extends EntityThrowable{
 	
 	private EntityLivingBase shootingEntity;
-	private int timer;
+	private int timer = 0;
+	private boolean smoking;
 
 	public EntitySmoke(World worldIn) {
 		super(worldIn);
@@ -37,9 +38,6 @@ public class EntitySmoke extends EntityThrowable{
 	@Override
 	public void onUpdate(){
 		super.onUpdate();
-		for (int i = 0; i < 80; ++i){
-			this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5);
-		}
 		if (!this.worldObj.isRemote){
 			if (this.timer > 0){
 				--this.timer;
@@ -49,6 +47,12 @@ public class EntitySmoke extends EntityThrowable{
 				this.setDead();
 			}
 		}
+		else{
+			for (int i = 0; i < 80; ++i){
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5);
+			}
+		}
+		
 	}
 	 
 	 
