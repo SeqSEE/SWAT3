@@ -22,6 +22,9 @@ import net.minecraft.world.World;
 public class EntityConcussion extends EntityThrowable{
 	
 	private EntityLivingBase shootingEntity;
+	private int fuse;
+	private List<BlockPos> blocks;
+	private boolean detonated;
 
 	public EntityConcussion(World worldIn) {
 		super(worldIn);
@@ -31,6 +34,7 @@ public class EntityConcussion extends EntityThrowable{
     public EntityConcussion(World world, EntityLivingBase shooter, int fuse) {
         this(world, shooter.posX, shooter.posY + (double)shooter.getEyeHeight() - 0.10000000149011612D, shooter.posZ);
         this.shootingEntity = shooter;
+        this.fuse = fuse;
  
     }
 
@@ -43,7 +47,6 @@ public class EntityConcussion extends EntityThrowable{
 	@Override
 	public void onUpdate(){
 		super.onUpdate();
-
 	}
 		
 
@@ -51,16 +54,29 @@ public class EntityConcussion extends EntityThrowable{
 	 
 	@Override
 	protected void onImpact(RayTraceResult result) {
-		List<BlockPos> blocks = this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 4.5F, false).getAffectedBlockPositions();
-		for (BlockPos pos : blocks){
-			List<EntityPlayer> players = this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos));
-			for (EntityPlayer player : players){
-				player.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 20, 1));
+		if (result.typeOfHit.equals(RayTraceResult.Type.BLOCK)){
+			this.motionX *= -0.10000000149011612D;
+            this.motionY *= -0.10000000149011612D;
+            this.motionZ *= -0.10000000149011612D;
+            this.rotationYaw += 180.0F;
+            this.prevRotationYaw += 180.0F;
+            this.setVelocity(0.0, 0.0, 0.0);
+		}
+		if (result.typeOfHit.equals(RayTraceResult.Type.ENTITY)){
+			if(this.shootingEntity instanceof EntityPlayer){
+				result.entityHit.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) this.shootingEntity), 0.1F);
 			}
 		}
-		if (!this.worldObj.isRemote){
-			this.setDead();
+		
+		for (BlockPos pos : this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 2.5F, false).getAffectedBlockPositions()){
+			List<EntityLivingBase> players = this.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos));
+			for (EntityLivingBase player : players){
+				player.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 120, 5));
+				player.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 60, 5));
+			}
+		}
+		if(!this.worldObj.isRemote){
+				this.setDead();
 		}
 	}
-
 }

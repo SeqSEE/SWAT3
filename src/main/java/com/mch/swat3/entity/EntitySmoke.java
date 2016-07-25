@@ -14,8 +14,9 @@ import net.minecraft.world.World;
 public class EntitySmoke extends EntityThrowable{
 	
 	private EntityLivingBase shootingEntity;
-	private int timer = 0;
-	private boolean smoking;
+	private int timer;
+	private int fuse;
+	private boolean impacted;
 
 	public EntitySmoke(World worldIn) {
 		super(worldIn);
@@ -25,6 +26,7 @@ public class EntitySmoke extends EntityThrowable{
     public EntitySmoke(World worldIn, EntityLivingBase shooter, int fuse) {
         this(worldIn, shooter.posX, shooter.posY + (double)shooter.getEyeHeight() - 0.10000000149011612D, shooter.posZ);
         this.shootingEntity = shooter;
+        this.fuse = fuse;
 
  
     }
@@ -38,35 +40,56 @@ public class EntitySmoke extends EntityThrowable{
 	@Override
 	public void onUpdate(){
 		super.onUpdate();
-		if (!this.worldObj.isRemote){
-			if (this.timer > 0){
-				--this.timer;
+		if (!this.worldObj.isRemote) {
+			if(this.fuse > 0){
+				--this.fuse;
+				this.timer = 100;
 			}
 			else{
-				this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 0.5F, false);
-				this.setDead();
+				if (this.timer > 0){
+					--this.timer;
+				}
+				else{
+					this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 0.1F, false);
+					this.setDead();
+				}
+				
 			}
 		}
-		else{
-			for (int i = 0; i < 80; ++i){
-				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX, this.posY, this.posZ, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5, rand.nextDouble() * 0.5);
-			}
+		if (this.impacted = true){
+			for(int i = 0; i < 80; ++i){
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, rand.nextDouble() / 2, rand.nextDouble() / 2, rand.nextDouble() / 2);
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.lastTickPosX, this.lastTickPosY - 1, this.lastTickPosZ, rand.nextDouble() / 3, rand.nextDouble() / 3, rand.nextDouble() / 3);
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, rand.nextDouble() / 2, rand.nextDouble() / 2, rand.nextDouble() / 2);
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.lastTickPosX, this.lastTickPosY - 1, this.lastTickPosZ, rand.nextDouble() / 3, rand.nextDouble() / 3, rand.nextDouble() / 3);
+			}	
 		}
 		
 	}
 	 
 	 
-	@Override
+	@Override 
 	protected void onImpact(RayTraceResult result) {
 		if (result.typeOfHit.equals(RayTraceResult.Type.BLOCK)){
-		    this.motionX *= -0.10000000149011612D;
+			if (!this.worldObj.getBlockState(result.getBlockPos()).getBlock().isAir(this.worldObj.getBlockState(result.getBlockPos()), this.worldObj, result.getBlockPos())){
+				this.impacted = true;	
+			}
+			this.motionX *= -0.10000000149011612D;
             this.motionY *= -0.10000000149011612D;
             this.motionZ *= -0.10000000149011612D;
             this.rotationYaw += 180.0F;
             this.prevRotationYaw += 180.0F;
             this.setVelocity(0.0, 0.0, 0.0);
-            this.timer = 100;
 		}
+		if (result.typeOfHit.equals(RayTraceResult.Type.ENTITY)){
+			if (this.shootingEntity != result.entityHit){
+				this.impacted = true;
+			}
+			if(this.shootingEntity instanceof EntityPlayer){
+				result.entityHit.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) this.shootingEntity), 0.1F);
+			}
+		}	
+		
 	}
 
 }
