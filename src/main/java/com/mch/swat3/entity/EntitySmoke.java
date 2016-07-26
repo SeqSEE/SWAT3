@@ -1,5 +1,7 @@
 package com.mch.swat3.entity;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -57,11 +59,14 @@ public class EntitySmoke extends EntityThrowable{
 			}
 		}
 		if (this.impacted = true){
-			for(int i = 0; i < 80; ++i){
-				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, rand.nextDouble() / 2, rand.nextDouble() / 2, rand.nextDouble() / 2);
-				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.lastTickPosX, this.lastTickPosY - 1, this.lastTickPosZ, rand.nextDouble() / 3, rand.nextDouble() / 3, rand.nextDouble() / 3);
-				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, rand.nextDouble() / 2, rand.nextDouble() / 2, rand.nextDouble() / 2);
-				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.lastTickPosX, this.lastTickPosY - 1, this.lastTickPosZ, rand.nextDouble() / 3, rand.nextDouble() / 3, rand.nextDouble() / 3);
+			for(int i = 0; i < 40; ++i){
+				Random random = new Random();
+				double x = (random.nextDouble() / 6);
+				double y = (random.nextDouble() / 6);
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.lastTickPosX + 1.0, this.lastTickPosY + 0.3, this.lastTickPosZ + 1.0, x, rand.nextDouble() / 10, y);
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.lastTickPosX, this.lastTickPosY + 0.3, this.lastTickPosZ, x, rand.nextDouble() / 9, y);
+				this.worldObj.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.lastTickPosX - 1.0, this.lastTickPosY + 0.3, this.lastTickPosZ - 1.0, x, rand.nextDouble() / 10, y);
+				
 			}	
 		}
 		
@@ -72,6 +77,10 @@ public class EntitySmoke extends EntityThrowable{
     {
         return 0.05F;
     }
+	
+	public void setTimer(int time){
+		this.timer = time;	
+	}
 	 
 	 
 	@Override 

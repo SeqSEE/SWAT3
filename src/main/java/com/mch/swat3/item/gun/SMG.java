@@ -52,19 +52,7 @@ public class SMG extends GunBase{
 	    }
 	}
 	
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
-		player.setActiveHand(hand);
-		int x = player.getPosition().getX();
-		int y = player.getPosition().getY();
-		int z = player.getPosition().getZ();
-		if (!player.getEntityWorld().isRemote){
-			for(int i = 0; i < 5; i++ ){
-				stack.getTagCompound().setInteger("shootCooldown", stack.getTagCompound().getInteger("shootCooldown") + 3);
-			}
-		}
-        return new ActionResult(EnumActionResult.SUCCESS, stack);
-	}
+	
 	
 	@Override
 	 public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {

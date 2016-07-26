@@ -54,14 +54,14 @@ public class EntityFlashbang extends EntityThrowable{
 
 	@Override
 	protected void onImpact(RayTraceResult result) {
-		List<BlockPos> blocks = this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 2.0F, false).getAffectedBlockPositions();
-		for (BlockPos pos : blocks){
-			List<EntityPlayer> players = this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos));
-			for (EntityPlayer player : players){
-				player.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 60, 5));
-			}
-		}
 		if(!this.worldObj.isRemote){
+			List<BlockPos> blocks = this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 2.0F, false).getAffectedBlockPositions();
+			for (BlockPos pos : blocks){
+				List<EntityPlayer> players = this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB(pos));
+				for (EntityPlayer player : players){
+					player.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 60, 5));
+				}
+			}
 			this.setDead();
 		}
 	}

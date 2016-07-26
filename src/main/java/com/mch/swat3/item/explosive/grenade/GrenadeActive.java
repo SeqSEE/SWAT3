@@ -139,15 +139,16 @@ public class GrenadeActive extends SWATItem {
 				for (BlockPos pos : world.createExplosion((Entity)null, player.posX, player.posY, player.posZ, explosionSize, false).getAffectedBlockPositions()){
 					List<EntityLivingBase> players = player.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos));
 					for (EntityLivingBase target : players){
-						target.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 200, 5));
-						target.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 200, 5));
+						target.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 200, 10));
+						target.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 200, 10));
 					}
 				}
 				break;
 			case SMOKE:
-				EntityThrowable grenade = new EntitySmoke(world, player, 0);
+				EntitySmoke grenade = new EntitySmoke(world, player, 0);
 				grenade.setLocationAndAngles(player.lastTickPosX, player.lastTickPosY, player.lastTickPosZ, player.rotationYawHead, player.rotationPitch);
 				if (!world.isRemote){
+					grenade.setTimer(100);
 					world.spawnEntityInWorld(grenade);
 				}
 				break;

@@ -1,5 +1,7 @@
 package com.mch.swat3.proxy;
 
+import org.lwjgl.input.Keyboard;
+
 import com.mch.swat3.client.renderer.entity.RenderConcussion;
 import com.mch.swat3.client.renderer.entity.RenderEntityGunSlug;
 import com.mch.swat3.client.renderer.entity.RenderFlashbang;
@@ -14,6 +16,8 @@ import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.util.VersionHandler;
 
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -62,8 +66,11 @@ public class ClientProxy extends CommonProxy{
 		
 	}	
 
+	public static KeyBinding reload = new KeyBinding("key.reload.desc", Keyboard.KEY_X, "key.swat3.category");
+	
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
+		//ClientRegistry.registerKeyBinding(reload);
 	}
 	
 	@Override

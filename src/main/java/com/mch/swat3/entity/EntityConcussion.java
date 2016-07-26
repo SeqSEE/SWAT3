@@ -74,8 +74,8 @@ public class EntityConcussion extends EntityThrowable{
 		for (BlockPos pos : this.worldObj.createExplosion((Entity)null, this.lastTickPosX, this.lastTickPosY, this.lastTickPosZ, 2.5F, false).getAffectedBlockPositions()){
 			List<EntityLivingBase> players = this.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos));
 			for (EntityLivingBase player : players){
-				player.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 120, 5));
-				player.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 60, 5));
+				player.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 120, 10));
+				player.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 60, 10));
 			}
 		}
 		if(!this.worldObj.isRemote){
