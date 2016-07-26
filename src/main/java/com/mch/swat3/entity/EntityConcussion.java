@@ -60,7 +60,6 @@ public class EntityConcussion extends EntityThrowable{
             this.motionZ *= -0.10000000149011612D;
             this.rotationYaw += 180.0F;
             this.prevRotationYaw += 180.0F;
-            this.setVelocity(0.0, 0.0, 0.0);
 		}
 		if (result.typeOfHit.equals(RayTraceResult.Type.ENTITY)){
 			if(this.shootingEntity instanceof EntityPlayer){
