@@ -148,7 +148,9 @@ public class GrenadeActive extends SWATItem {
 				EntityThrowable grenade = new EntitySmoke(world, player, 0);
 				grenade.setLocationAndAngles(player.lastTickPosX, player.lastTickPosY, player.lastTickPosZ, player.rotationYawHead, player.rotationPitch);
 				grenade.setVelocity(0.0, 1.0, 0.0);
-				world.spawnEntityInWorld(grenade);
+				if (!world.isRemote){
+					world.spawnEntityInWorld(grenade);
+				}
 				break;
 			case PIPEBOMB:
 				world.createExplosion((Entity)null, player.posX, player.posY, player.posZ, explosionSize, false);
