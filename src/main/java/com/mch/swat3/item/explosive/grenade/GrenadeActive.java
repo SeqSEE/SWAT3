@@ -1,5 +1,7 @@
 package com.mch.swat3.item.explosive.grenade;
 
+import java.util.List;
+
 import com.mch.swat3.entity.EntityConcussion;
 import com.mch.swat3.entity.EntityFlashbang;
 import com.mch.swat3.entity.EntityPipebomb;
@@ -7,13 +9,18 @@ import com.mch.swat3.entity.EntitySmoke;
 import com.mch.swat3.item.SWATItem;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 
@@ -96,16 +103,16 @@ public class GrenadeActive extends SWATItem {
 		float explosionSize = 0.0F;
 		switch(this.grenadeType){
 		case CONCUSSION:
-			explosionSize = 1.0F;
+			explosionSize = 0.8F;
 			break;
 		case FLASHBANG:
-			explosionSize = 0.2F;
+			explosionSize = 0.8F;
 			break;
 		case SMOKE:
-			explosionSize = 0.1F;
+			explosionSize = 0.8F;
 			break;
 		case PIPEBOMB:
-			explosionSize = 1.3F;
+			explosionSize = 1.0F;
 			break;
 		default:
 			break;
@@ -117,34 +124,37 @@ public class GrenadeActive extends SWATItem {
 	}
 
 	private void detonate(World world, EntityPlayer player, int slot, float explosionSize) {
-		world.createExplosion((Entity)null, player.posX, player.posY, player.posZ, explosionSize, false);
 		player.replaceItemInInventory(slot, null);
-		
+		switch(this.grenadeType){
+			case CONCUSSION:
+				for (BlockPos pos : world.createExplosion((Entity)null, player.posX, player.posY, player.posZ, explosionSize, false).getAffectedBlockPositions()){
+					List<EntityLivingBase> players = player.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos));
+					for (EntityLivingBase target : players){
+						target.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 200, 5));
+						target.addPotionEffect(new PotionEffect(Potion.getPotionById(2), 200, 5));
+					}
+				}
+				break;
+			case FLASHBANG:
+				for (BlockPos pos : world.createExplosion((Entity)null, player.posX, player.posY, player.posZ, explosionSize, false).getAffectedBlockPositions()){
+					List<EntityLivingBase> players = player.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, new AxisAlignedBB(pos));
+					for (EntityLivingBase target : players){
+						target.addPotionEffect(new PotionEffect(Potion.getPotionById(9), 200, 5));
+						target.addPotionEffect(new PotionEffect(Potion.getPotionById(15), 200, 5));
+					}
+				}
+				break;
+			case SMOKE:
+				EntityThrowable grenade = new EntitySmoke(world, player, 0);
+				grenade.setLocationAndAngles(player.lastTickPosX, player.lastTickPosY, player.lastTickPosZ, player.rotationYawHead, player.rotationPitch);
+				grenade.setVelocity(0.0, 1.0, 0.0);
+				world.spawnEntityInWorld(grenade);
+				break;
+			case PIPEBOMB:
+				world.createExplosion((Entity)null, player.posX, player.posY, player.posZ, explosionSize, false);
+				break;
+			default:
+			break;
+		}
 	}
 }
-
-	
-	/*
-	private void smoke(World world, double x, double y, double z){
-		int timer = 120;
-		do {
-			double sx = world.rand.nextDouble();
-			double sy = world.rand.nextDouble();
-			double sz = world.rand.nextDouble();
-			double a = world.rand.nextDouble();
-			double b = world.rand.nextDouble();
-			double c = world.rand.nextDouble();
-			
-			//EnumParticleTypes particleType, double xCoord, double yCoord, double zCoord, double xSpeed, double ySpeed, double zSpeed
-			
-			world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, false, x + a, y + b, z + c, sx - 0.1, sy - 0.1, sz - 0.1);
-			--timer;
-		} while(timer > 0);
-		
-	}
-	*/
-
-	
-
-	    
-
