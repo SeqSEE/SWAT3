@@ -49,7 +49,11 @@ public class EntityConcussion extends EntityThrowable{
 		super.onUpdate();
 	}
 		
-
+	@Override
+	protected float getGravityVelocity()
+    {
+        return 0.05F;
+    }
 	 
 	 
 	@Override

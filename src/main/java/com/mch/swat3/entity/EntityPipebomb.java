@@ -42,6 +42,11 @@ public class EntityPipebomb extends EntityThrowable{
 			}
 		}
 	}
+	
+	@Override
+	protected float getGravityVelocity(){
+        return 0.05F;
+    }
 	 
 	@Override
 	protected void onImpact(RayTraceResult result) {

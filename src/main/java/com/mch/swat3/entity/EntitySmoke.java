@@ -66,6 +66,12 @@ public class EntitySmoke extends EntityThrowable{
 		}
 		
 	}
+	
+	@Override
+	protected float getGravityVelocity()
+    {
+        return 0.05F;
+    }
 	 
 	 
 	@Override 
