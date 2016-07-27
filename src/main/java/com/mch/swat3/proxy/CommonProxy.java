@@ -10,6 +10,8 @@ import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.init.SWATRecipes;
 import com.mch.swat3.stats.SWATAchievement;
 import com.mch.swat3.util.ConfigHandler;
+import com.mch.swat3.util.KeyBindMessage;
+import com.mch.swat3.util.KeyBindMessage.KeyBindMessageHandler;
 import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
 
@@ -19,6 +21,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class CommonProxy {
 
@@ -26,7 +29,7 @@ public class CommonProxy {
 		ConfigHandler.config(preEvent);
 		if (SWAT3.getUpdates && NetworkHandler.networkAvailable()){
 			VersionHandler.check(preEvent);
-		}
+	   }
 		register(preEvent);
 		registerEntities(preEvent);
 	}
@@ -45,6 +48,8 @@ public class CommonProxy {
 			SWATItems.register(preEvent);
 			SWATRecipes.registerRecipes(preEvent);
 			MinecraftForge.EVENT_BUS.register(new SWAT3());
+			NetworkHandler.init();
+	
 	}
 
 	public void init(FMLInitializationEvent event) {

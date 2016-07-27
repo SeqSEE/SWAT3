@@ -5,9 +5,22 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
+import com.mch.swat3.Reference;
+
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
+
 public class NetworkHandler {
 	
-	
+	public static SimpleNetworkWrapper INSTANCE;
+    private static int id = 0;
+
+    public static void init() {
+        INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(Reference.ID);
+
+        INSTANCE.registerMessage(KeyBindMessage.KeyBindMessageHandler.class, KeyBindMessage.class, id++, Side.SERVER);
+    }
 	/*
 	 * Returns true if can openConnection for google.com
 	 * 
@@ -28,5 +41,5 @@ public class NetworkHandler {
     		return false;
     	}	    	
     }
-
 }
+

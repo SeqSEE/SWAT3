@@ -4,19 +4,12 @@ import com.mch.swat3.init.SWATItems;
 import com.mch.swat3.proxy.ClientProxy;
 import com.mch.swat3.proxy.CommonProxy;
 import com.mch.swat3.stats.SWATAchievement;
+import com.mch.swat3.util.KeyBindMessage;
+import com.mch.swat3.util.NetworkHandler;
 import com.mch.swat3.util.VersionHandler;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumHand;
-import net.minecraft.world.World;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -25,6 +18,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -69,20 +64,15 @@ public class SWAT3 {
 		}
 	}
 	
-	/*
+	
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority=EventPriority.NORMAL, receiveCanceled=true)
 	public void onEvent(KeyInputEvent event) {
 		if(ClientProxy.reload.isPressed()){
-			Minecraft mc = Minecraft.getMinecraft();
-			EntityPlayer player = FMLClientHandler.instance().getClientPlayerEntity();
-			ItemStack stack = player.getHeldItem(EnumHand.MAIN_HAND);
-			if (stack != null){
-				stack.setItemDamage(0);
-			}
+			NetworkHandler.INSTANCE.sendToServer(new KeyBindMessage().setType(1));
 		}
 	}
-	*/
+	
 
 
 	

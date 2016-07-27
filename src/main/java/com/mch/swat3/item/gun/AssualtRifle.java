@@ -43,13 +43,6 @@ public class AssualtRifle extends GunBase{
 	}
 
 	
-	//This makes it so when damage is caused to the item it does not animate re-equip.
-		@Override
-		public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
-			return false;
-		}
-	
-
 	
 	@Override
 	@Nullable
@@ -96,7 +89,7 @@ public class AssualtRifle extends GunBase{
 	
 	@Override
 	 public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
-		boolean swing = false;
+		boolean swing = true;
 		int x = entity.getPosition().getX();
 		int y = entity.getPosition().getY();
 		int z = entity.getPosition().getZ();
@@ -106,7 +99,7 @@ public class AssualtRifle extends GunBase{
 				        	stack.getTagCompound().setInteger("delayTicks",10);
 				        	stack.getTagCompound().setInteger("shootCooldown",1);
 				}
-				swing = true;
+				swing = false;
 			}
 		}	
 		return swing;
