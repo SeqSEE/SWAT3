@@ -2,6 +2,8 @@ itemGroup.swatweapons=SWAT³ Weapons
 itemGroup.swatarmor=SWAT³ Armor
 itemGroup.swatprovisions=SWAT³ Provisions
 itemGroup.swatparts=SWAT³ Parts
+key.swat3.category=SWAT³ Controls
+key.reload.desc=Reload
 
 
 item.ak_47.name=AK-47

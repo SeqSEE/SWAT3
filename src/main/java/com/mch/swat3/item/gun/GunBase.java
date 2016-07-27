@@ -30,6 +30,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class GunBase extends ItemBow{
+	
+	public enum GunType{
+		AK_47
+	}
 
 	public GunBase(String name) {
 

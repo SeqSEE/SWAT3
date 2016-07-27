@@ -21,10 +21,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class AssualtRifle extends GunBase{
-
-	public enum GunType{
-		AK_47
-	}
 	
 	private GunType type;
 	private int maxAmmo;
@@ -37,7 +33,7 @@ public class AssualtRifle extends GunBase{
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
-		stack.getTagCompound().setInteger("delayTicks",200);
+		stack.getTagCompound().setInteger("delayTicks",stack.getTagCompound().getInteger("delayTicks") + 2);
 		player.setActiveHand(hand);
         return new ActionResult(EnumActionResult.SUCCESS, stack);
 	}
