@@ -52,7 +52,7 @@ public class SWATItems {
 
 	// These are entity textures as well as item textures.
 	public static Item SLUG = new GunPart("slug", 64);
-	public static Item BALLISTIC_KNIFE_BLADE = new GunAmmo("ballistick_knife_blade", 64, AmmoType.BALISTIC_KNIFE);
+	public static Item BALLISTIC_KNIFE_BLADE = new GunAmmo("ballistic_knife_blade", 64, AmmoType.BALISTIC_KNIFE);
 	public static Item GRENADE_FLASHBANG_ACTIVE = new GrenadeActive("grenade_flashbang_active", GrenadeType.FLASHBANG);
 	public static Item GRENADE_SMOKE_ACTIVE = new GrenadeActive("grenade_smoke_active", GrenadeType.SMOKE);
 	public static Item PIPE_BOMB_ACTIVE = new GrenadeActive("pipe_bomb_active", GrenadeType.PIPEBOMB);

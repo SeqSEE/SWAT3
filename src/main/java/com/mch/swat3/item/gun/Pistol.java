@@ -1,19 +1,9 @@
 package com.mch.swat3.item.gun;
 
-import java.util.List;
+import java.util.Random;
 
-import javax.annotation.Nullable;
-
-import com.mch.swat3.entity.EntityGunSlug;
-
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Pistol extends GunBase{
@@ -27,12 +17,25 @@ public class Pistol extends GunBase{
 
 	@Override
 	public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
-		return super.onEntitySwing(entity, stack);
+		if (stack.hasTagCompound()) {
+			stack.getTagCompound().setFloat("inaccuracy", 1.0F * this.itemRand.nextFloat() * this.itemRand.nextFloat());
+		}
+		return false;
 	}
 	
 	@Override
 	public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
-		
+		if (stack.hasTagCompound()){
+			if (stack.getTagCompound().hasKey("inaccuracy")){
+				if (stack.getTagCompound().getFloat("inaccuracy") > 0.0F){
+					stack.getTagCompound().setFloat("inaccuracy", stack.getTagCompound().getFloat("inaccuracy") - 0.2F);
+				}
+			}
+			else{
+				stack.getTagCompound().setFloat("inaccuracy", 0.98F);
+			}
+			
+		}
 	}
 	
 	@Override

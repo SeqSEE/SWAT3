@@ -9,6 +9,7 @@ import com.mch.swat3.creativetab.SWATCreativeTabs;
 import com.mch.swat3.entity.EntityGunSlug;
 import com.mch.swat3.init.SWATItems;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -51,27 +52,31 @@ public class GunBase extends ItemBow {
 			}
 		});
 	}
-	
 
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected) {
+		float inaccuracy = 1.0F;
 		if (stack.hasTagCompound()) {
+			if (stack.getTagCompound().hasKey("inacurracy")) {
+				inaccuracy = stack.getTagCompound().getFloat("inaccuracy");
+			}
 			if (stack.getTagCompound().hasKey("firing")) {
 				if (stack.getTagCompound().getInteger("firing") > 0) {
 					stack.getTagCompound().setInteger("firing", stack.getTagCompound().getInteger("firing") - 1);
 					for (int i = 0; i < 6; ++i) {
-						if ((i % 6) == 0){
+						if ((i % 6) == 0) {
 							if (!world.isRemote) {
 								world.playSound((EntityPlayer) null, entity.posX, entity.posY, entity.posZ,
 										SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.NEUTRAL, 1.5F, 10.0F);
 								EntityGunSlug slug = new EntityGunSlug(world, (EntityLivingBase) entity);
-								slug.setHeadingFromThrower(entity, entity.rotationPitch, entity.rotationYaw, 0.0F, 4.5F,
-										1.0F);
-								entity.getEntityWorld().spawnEntityInWorld(slug);
 
+								slug.setHeadingFromThrower(entity, entity.rotationPitch, entity.rotationYaw, 0.0F, 4.5F,
+										inaccuracy);
+								entity.getEntityWorld().spawnEntityInWorld(slug);
+								stack.getTagCompound().setFloat("inaccuracy", 1.0F);
 							}
 						}
-						
+
 					}
 				}
 			}
@@ -81,7 +86,6 @@ public class GunBase extends ItemBow {
 			stack.setTagCompound(new NBTTagCompound());
 		}
 	}
-
 
 	@Override
 	public EnumActionResult onItemUseFirst(ItemStack stack, EntityPlayer player, World world, BlockPos pos,
@@ -104,7 +108,7 @@ public class GunBase extends ItemBow {
 	 * net.minecraft.item.Item#showDurabilityBar(net.minecraft.item.ItemStack)
 	 * 
 	 * Shows the durability bar if the stack has the NBTTagCompund "hasFired"
-	 * and it equals true This is mainly to prevent the Durability bar from
+	 * and it equals true. This is mainly to prevent the Durability bar from
 	 * rendering in the Creative Mode Inventory because I think it is ugly.
 	 */
 	public boolean showDurabilityBar(ItemStack stack) {
@@ -129,8 +133,8 @@ public class GunBase extends ItemBow {
 	}
 
 	public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
-		for (int i = 0; i < 2; ++i){
-			if ((i % 2) == 0){
+		for (int i = 0; i < 2; ++i) {
+			if ((i % 2) == 0) {
 				if (stack.hasTagCompound()) {
 					if (stack.getTagCompound().hasKey("firing")) {
 						stack.getTagCompound().setInteger("firing", stack.getTagCompound().getInteger("firing") + 1);
@@ -141,12 +145,13 @@ public class GunBase extends ItemBow {
 				}
 			}
 		}
-		
+
 	}
 
 	@Override
 	public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
 		if (stack.hasTagCompound()) {
+			stack.getTagCompound().setFloat("inaccuracy", 1.0F * this.itemRand.nextFloat());
 			if (stack.getTagCompound().hasKey("firing")) {
 				stack.getTagCompound().setInteger("firing", stack.getTagCompound().getInteger("firing") + 1);
 			}
@@ -157,7 +162,7 @@ public class GunBase extends ItemBow {
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
 		if (stack.hasTagCompound()) {
-				stack.getTagCompound().setInteger("firing", 0);
+			stack.getTagCompound().setInteger("firing", 0);
 		}
 	}
 
