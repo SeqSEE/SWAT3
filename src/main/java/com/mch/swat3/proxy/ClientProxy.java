@@ -2,11 +2,13 @@ package com.mch.swat3.proxy;
 
 import org.lwjgl.input.Keyboard;
 
+import com.mch.swat3.client.renderer.entity.RenderBallisticBlade;
 import com.mch.swat3.client.renderer.entity.RenderConcussion;
 import com.mch.swat3.client.renderer.entity.RenderEntityGunSlug;
 import com.mch.swat3.client.renderer.entity.RenderFlashbang;
 import com.mch.swat3.client.renderer.entity.RenderPipebomb;
 import com.mch.swat3.client.renderer.entity.RenderSmoke;
+import com.mch.swat3.entity.EntityBallisticBlade;
 import com.mch.swat3.entity.EntityConcussion;
 import com.mch.swat3.entity.EntityFlashbang;
 import com.mch.swat3.entity.EntityGunSlug;
@@ -61,6 +63,11 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityGunSlug.class, new IRenderFactory<EntityGunSlug>() {
             @Override public RenderEntityGunSlug createRenderFor (RenderManager manager) {
                 return new RenderEntityGunSlug(manager, SWATItems.SLUG);
+            }
+        });
+		RenderingRegistry.registerEntityRenderingHandler(EntityBallisticBlade.class, new IRenderFactory<EntityBallisticBlade>() {
+            @Override public RenderBallisticBlade createRenderFor (RenderManager manager) {
+                return new RenderBallisticBlade(manager, SWATItems.BALLISTIC_KNIFE_BLADE);
             }
         });
 		

@@ -41,6 +41,7 @@ public class CommonProxy {
 		EntityRegistry.registerModEntity(EntityPipebomb.class, "grenadePipebomb", id++, SWAT3.instance, 64, 2, true);
 		EntityRegistry.registerModEntity(EntitySmoke.class, "grenadeSmoke", id++, SWAT3.instance, 64, 2, true);
 		EntityRegistry.registerModEntity(EntityGunSlug.class, "gunSlug", id++, SWAT3.instance, 64, 2, true);
+		EntityRegistry.registerModEntity(EntityGunSlug.class, "ballisticBlade", id++, SWAT3.instance, 64, 2, true);
 	
 	}
 

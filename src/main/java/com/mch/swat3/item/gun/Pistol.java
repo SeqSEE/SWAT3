@@ -11,7 +11,9 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Pistol extends GunBase{
@@ -22,33 +24,23 @@ public class Pistol extends GunBase{
 
 	}
 	
-	@Override
-	 public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
-		boolean swing = false;
-		int x = entity.getPosition().getX();
-		int y = entity.getPosition().getY();
-		int z = entity.getPosition().getZ();
-		if (entity instanceof EntityPlayer){
-			EntityPlayer player = (EntityPlayer)entity;
-			player.getEntityWorld().playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 4 + 0.8F));
-			EntityGunSlug slug = new EntityGunSlug(player.getEntityWorld(), player);
-			slug.setHeadingFromThrower(player, player.rotationPitch, player.rotationYawHead, 0.0F, 4.5F, 1.0F);
-			if (!entity.getEntityWorld().isRemote){
-				entity.getEntityWorld().spawnEntityInWorld(slug);
-				swing = true;
-			}
-		}	
-		return swing;
-	}
 
 	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected){
-		super.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
-    }
+	public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
+		return super.onEntitySwing(entity, stack);
+	}
+	
+	@Override
+	public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
+		
+	}
 	
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
-	
+		if (stack.hasTagCompound()) {
+				stack.getTagCompound().setInteger("firing", 1);
+		}
 	}
+	
 
 }

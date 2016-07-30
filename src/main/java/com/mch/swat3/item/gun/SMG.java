@@ -21,57 +21,5 @@ public class SMG extends GunBase{
 		super(name);
 	}
 	
-	@Override
-	public void onUpdate(ItemStack stack, World world, Entity entity, int itemSlot, boolean isSelected) {
-	    if (stack.hasTagCompound()){
-	    	if (stack.getTagCompound().hasKey("shootCooldown")){
-	    		if (stack.getTagCompound().getInteger("shootCooldown") > 0){
-	    			stack.getTagCompound().setInteger("shootCooldown", stack.getTagCompound().getInteger("shootCooldown") - 1);
-	    		}
-	    		else{
-	    			if (stack.getTagCompound().hasKey("delayTicks")){
-	    	            if (stack.getTagCompound().getInteger("delayTicks") > 0){
-	    	                if (stack.getTagCompound().getInteger("delayTicks") % 1 == 0){
-	    	                	if (!world.isRemote){
-	    	                		EntityPlayer player = (EntityPlayer)entity;
-	    	                		player.getEntityWorld().playSound((EntityPlayer)null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.NEUTRAL, 3.5F, 20.0F);
-	    	                		EntityGunSlug slug = new EntityGunSlug(player.getEntityWorld(), (EntityLivingBase)player);
-	    	                		slug.setHeadingFromThrower(player, player.rotationPitch, player.rotationYawHead, 0.0F, 4.5F, 0.2F);
-	    	                		entity.getEntityWorld().spawnEntityInWorld(slug);
-	    	                	}
-	    	                }
-	    	                stack.getTagCompound().setInteger("delayTicks",stack.getTagCompound().getInteger("delayTicks") - 1);
-	    	            }
-	    	        }
-	    		}
-	    	}
-	    	else {
-	    		stack.setTagCompound(new NBTTagCompound());
-	    	}
-	        
-	    }
-	}
-	
-	
-	
-	@Override
-	 public boolean onEntitySwing(EntityLivingBase entity, ItemStack stack) {
-		boolean swing = false;
-		int x = entity.getPosition().getX();
-		int y = entity.getPosition().getY();
-		int z = entity.getPosition().getZ();
-		if (entity instanceof EntityPlayer){
-			if (!entity.getEntityWorld().isRemote){
-				for(int i = 0; i < 3; i++ ){
-				        	stack.getTagCompound().setInteger("delayTicks",15);
-				        	stack.getTagCompound().setInteger("shootCooldown",3);
-				}
-				swing = true;
-			}
-		}	
-		return swing;
-	}
-
-	
 
 }
